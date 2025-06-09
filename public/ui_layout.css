@@ -1,0 +1,171 @@
+body {
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#pagegrid {
+  padding-top: 4em;
+}
+
+.ui.menu {
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.ui.card {
+  width: 100%;
+  margin-bottom: 1em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.ui.card:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.ui.card .content {
+  padding: 1em;
+}
+
+.ui.card .content .description {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+.ui.card .content .meta {
+  color: rgba(0,0,0,.4);
+  font-size: 0.9em;
+}
+
+.ui.card .content .time.meta {
+  color: rgba(0,0,0,.4);
+  font-size: 0.9em;
+}
+
+.ui.card .content .img.post.image {
+  margin: 0.5em 0;
+}
+
+.ui.card .content .img.post.image img {
+  border-radius: 4px;
+}
+
+.ui.card .extra.content {
+  padding: 0.5em 1em;
+}
+
+.ui.comments {
+  margin: 0;
+  padding: 0;
+}
+
+.ui.comments .comment {
+  padding: 0.5em 0;
+}
+
+.ui.comments .comment .content {
+  padding: 0.5em 0;
+}
+
+.ui.comments .comment .content .text {
+  margin: 0.5em 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.ui.comments .comment .content .actions {
+  margin-top: 0.5em;
+}
+
+.ui.comments .comment .content .actions a {
+  color: rgba(0,0,0,.4);
+  font-size: 0.9em;
+  margin-right: 1em;
+}
+
+.ui.comments .comment .content .actions a:hover {
+  color: rgba(0,0,0,.8);
+}
+
+.ui.button {
+  background-color: white;
+  color: rgba(0,0,0,.6);
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.ui.button:hover {
+  background-color: #f8f9fa;
+  color: rgba(0,0,0,.8);
+}
+
+.ui.button.primary {
+  background-color: #4DA5F4;
+  color: white;
+}
+
+.ui.button.primary:hover {
+  background-color: #3b8cd6;
+}
+
+#newpost {
+  margin-bottom: 1em;
+}
+
+#newpost input {
+  border-radius: 20px;
+  padding: 0.8em 1em;
+  font-size: 1em;
+}
+
+#newpost .ui.label {
+  border-radius: 50%;
+  padding: 0.5em;
+}
+
+#newpost .ui.label img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.ui.dropdown .menu {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ui.dropdown .menu .item {
+  padding: 0.8em 1em;
+}
+
+.ui.dropdown .menu .item:hover {
+  background-color: #f8f9fa;
+}
+
+#loading {
+  text-align: center;
+  padding: 2em;
+}
+
+#loading img {
+  width: 3em;
+  height: 3em;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+} 

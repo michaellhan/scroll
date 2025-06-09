@@ -1,0 +1,58 @@
+body {
+    background-color: #F5F8FA;
+    padding: 0em;
+}
+
+
+/*Page Container*/
+
+#pagegrid {
+    justify-content: center;
+}
+
+#pagecontainer {
+    padding-top: 50px;
+    justify-content: center;
+}
+
+
+/*General CSS*/
+
+.hidden {
+    display: none;
+}
+
+a,
+button,
+.ui.button {
+    cursor: pointer;
+}
+
+
+/* Header CSS */
+
+.ui.menu .item>i.icon {
+    margin: 0 !important;
+}
+
+.ui.mini.image {
+    height: 35px;
+}
+
+
+/*Other*/
+
+.ui.fluid.card>.content>.description {
+    font-size: 1.05em;
+}
+
+
+/* Image Upload*/
+
+.image-upload>input {
+    display: none;
+}
+
+.image-upload img {
+    cursor: pointer;
+}

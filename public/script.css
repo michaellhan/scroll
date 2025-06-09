@@ -1,0 +1,188 @@
+.ui.dimmer {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.ui.dimmer .content {
+  color: white;
+}
+
+.ui.dimmer .content .center {
+  text-align: center;
+}
+
+.ui.dimmer .content .center h2 {
+  margin-bottom: 1em;
+}
+
+.ui.dimmer .content .center h3 {
+  margin-bottom: 2em;
+}
+
+.ui.dimmer .content .center .ui.button {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 0.8em 1.5em;
+  font-size: 1.1em;
+}
+
+.ui.dimmer .content .center .ui.button:hover {
+  background-color: #f8f9fa;
+}
+
+.ui.labeled.button .ui.label {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.ui.labeled.button:hover .ui.label {
+  background-color: #ff3333;
+}
+
+.ui.labeled.button .ui.label.count {
+  margin-left: 0.5em;
+}
+
+.ui.comments .comment .content.transition.hidden {
+  display: none;
+}
+
+.ui.comments .comment .content.transition.hidden .text {
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+}
+
+.ui.comments .comment .content.transition.hidden .actions {
+  margin-top: 0.5em;
+}
+
+.ui.comments .comment .content.transition.hidden .actions a {
+  color: white;
+  text-decoration: underline;
+}
+
+.ui.comments .comment .content.transition.hidden .actions a:hover {
+  color: #f8f9fa;
+}
+
+.ui.form .field textarea.newcomment {
+  resize: none;
+  border: none;
+  background-color: transparent;
+  padding: 0.5em;
+  font-size: 1em;
+  line-height: 1.4;
+  min-height: 2.5em;
+  max-height: 10em;
+}
+
+.ui.form .field textarea.newcomment:focus {
+  outline: none;
+}
+
+.ui.form .field textarea.newcomment::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.ui.fluid.left.labeled.right.icon.input {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+}
+
+.ui.fluid.left.labeled.right.icon.input .ui.label {
+  margin-right: 0.5em;
+}
+
+.ui.fluid.left.labeled.right.icon.input .ui.label img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.ui.fluid.left.labeled.right.icon.input .ui.form {
+  flex: 1;
+  margin: 0;
+}
+
+.ui.fluid.left.labeled.right.icon.input .ui.form .field {
+  margin: 0;
+}
+
+.ui.fluid.left.labeled.right.icon.input i.icon {
+  color: #4DA5F4;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+.ui.fluid.left.labeled.right.icon.input i.icon:hover {
+  color: #3b8cd6;
+}
+
+.myTimer.hidden {
+  display: none;
+}
+
+#mobile_logo {
+  height: 2em;
+  margin: 0.5em 0;
+}
+
+#logo {
+  height: 2.5em;
+  margin: 0.5em 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.menu {
+    padding: 0.5em;
+  }
+  
+  .ui.menu .item {
+    padding: 0.5em;
+  }
+  
+  .ui.menu .item img {
+    height: 1.5em;
+  }
+  
+  .ui.menu .item i.icon {
+    font-size: 1.2em;
+  }
+  
+  .ui.card {
+    margin: 0.5em 0;
+  }
+  
+  .ui.card .content {
+    padding: 0.8em;
+  }
+  
+  .ui.card .content .description {
+    font-size: 1em;
+  }
+  
+  .ui.comments .comment {
+    padding: 0.3em 0;
+  }
+  
+  .ui.comments .comment .content {
+    padding: 0.3em 0;
+  }
+  
+  .ui.comments .comment .content .text {
+    font-size: 0.9em;
+  }
+  
+  .ui.comments .comment .content .actions {
+    margin-top: 0.3em;
+  }
+  
+  .ui.comments .comment .content .actions a {
+    font-size: 0.8em;
+  }
+} 
