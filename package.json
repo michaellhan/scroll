@@ -1,0 +1,27 @@
+{
+  "name": "scroll",
+  "version": "1.0.0",
+  "description": "A social media simulation exploring digital consumption patterns",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "express-validator": "^5.3.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.6.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

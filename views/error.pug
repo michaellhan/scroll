@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  .error-container
+    h1= message
+    if error.stack
+      pre.error-stack= error.stack 

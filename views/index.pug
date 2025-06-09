@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .feed-container
+    each post in posts
+      .post
+        .post-header
+          img.profile-pic(src=post.profilePic, alt="Profile Picture")
+          .post-info
+            .username= post.username
+            .timestamp= post.timestamp
+        .post-content
+          img.post-image(src=post.image, alt="Post Image")
+          p.caption= post.caption
+        .post-actions
+          .likes
+            span.like-count= post.likes
+            button.like-button Like
+          .comments
+            each comment in post.comments
+              .comment
+                span.username= comment.username
+                span.text= comment.text
+            form.comment-form
+              input(type="text", placeholder="Add a comment...")
+              button(type="submit") Post 
