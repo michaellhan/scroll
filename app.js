@@ -193,15 +193,20 @@ app.post('/api/posts/:postId/unflag', (req, res) => {
 // API endpoints for likes
 app.post('/api/posts/:postId/like', (req, res) => {
   const postId = req.params.postId;
-  const post = posts.find(p => p._id === postId);
+  console.log('Like request received for post:', postId);
   
+  const post = posts.find(p => p._id === postId);
   if (!post) {
+    console.error('Post not found:', postId);
     return res.status(404).json({ error: 'Post not found' });
   }
   
   if (!post.liked) {
     post.likes += 1;
     post.liked = true;
+    console.log('Post liked successfully. New like count:', post.likes);
+  } else {
+    console.log('Post already liked');
   }
   
   res.json({ 
@@ -214,15 +219,20 @@ app.post('/api/posts/:postId/like', (req, res) => {
 
 app.post('/api/posts/:postId/unlike', (req, res) => {
   const postId = req.params.postId;
-  const post = posts.find(p => p._id === postId);
+  console.log('Unlike request received for post:', postId);
   
+  const post = posts.find(p => p._id === postId);
   if (!post) {
+    console.error('Post not found:', postId);
     return res.status(404).json({ error: 'Post not found' });
   }
   
   if (post.liked) {
     post.likes = Math.max(0, post.likes - 1);
     post.liked = false;
+    console.log('Post unliked successfully. New like count:', post.likes);
+  } else {
+    console.log('Post already unliked');
   }
   
   res.json({ 

@@ -146,6 +146,7 @@ $.ajaxSetup({
 });
 
 function likePost(postId) {
+  console.log('Like request received for post:', postId);
   const post = document.querySelector(`[postid="${postId}"]`);
   if (!post) {
     console.error('Post element not found for postId:', postId);
@@ -154,6 +155,12 @@ function likePost(postId) {
   const likeButton = post.querySelector('.like.button');
   const likeCount = post.querySelector('.count');
   
+  // Update UI immediately
+  likeButton.classList.add('red');
+  const currentLikes = parseInt(likeCount.textContent);
+  likeCount.textContent = currentLikes + 1;
+  
+  // Make API call
   fetch(`/api/posts/${postId}/like`, {
     method: 'POST',
     headers: {
@@ -167,18 +174,32 @@ function likePost(postId) {
     if (token) {
       setCsrfToken(token);
     }
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   })
   .then(data => {
+    console.log('Like response:', data);
     if (data.success) {
-      likeButton.classList.add('red');
       likeCount.textContent = data.likes;
+    } else {
+      // Revert UI if server request failed
+      likeButton.classList.remove('red');
+      likeCount.textContent = currentLikes;
+      console.error('Server returned error:', data.error);
     }
   })
-  .catch(error => console.error('Error:', error));
+  .catch(error => {
+    console.error('Error liking post:', error);
+    // Revert UI if request failed
+    likeButton.classList.remove('red');
+    likeCount.textContent = currentLikes;
+  });
 }
 
 function unlikePost(postId, $button) {
+  console.log('Unlike request received for post:', postId);
   const post = document.querySelector(`[postid="${postId}"]`);
   if (!post) {
     console.error('Post element not found for postId:', postId);
@@ -187,27 +208,47 @@ function unlikePost(postId, $button) {
   const likeButton = post.querySelector('.like.button');
   const likeCount = post.querySelector('.count');
   
+  // Update UI immediately
+  likeButton.classList.remove('red');
+  const currentLikes = parseInt(likeCount.textContent);
+  likeCount.textContent = Math.max(0, currentLikes - 1);
+  
+  // Make API call
   fetch(`/api/posts/${postId}/unlike`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'X-CSRF-Token': getCsrfToken()
-    }
+    },
+    credentials: 'include'
   })
   .then(response => {
     const token = response.headers.get('X-CSRF-Token');
     if (token) {
       setCsrfToken(token);
     }
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   })
   .then(data => {
+    console.log('Unlike response:', data);
     if (data.success) {
-      likeButton.classList.remove('red');
       likeCount.textContent = data.likes;
+    } else {
+      // Revert UI if server request failed
+      likeButton.classList.add('red');
+      likeCount.textContent = currentLikes;
+      console.error('Server returned error:', data.error);
     }
   })
-  .catch(error => console.error('Error:', error));
+  .catch(error => {
+    console.error('Error unliking post:', error);
+    // Revert UI if request failed
+    likeButton.classList.add('red');
+    likeCount.textContent = currentLikes;
+  });
 }
 
 function likeComment(commentId, $button) {
@@ -358,9 +399,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Like button click handler
   document.querySelectorAll('.like.button').forEach(button => {
     button.addEventListener('click', function(e) {
+      e.preventDefault();
       e.stopPropagation();
       const postId = this.closest('[postid]').getAttribute('postid');
-      likePost(postId);
+      console.log('Like button clicked for post:', postId);
+      
+      if (this.classList.contains('red')) {
+        unlikePost(postId, this);
+      } else {
+        likePost(postId);
+      }
     });
   });
 
