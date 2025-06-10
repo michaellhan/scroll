@@ -100,9 +100,51 @@ $(document).ready(function() {
     this.style.height = 'auto';
     this.style.height = (this.scrollHeight) + 'px';
   });
+
+  // Initialize CSRF token from meta tag if available
+  const metaToken = document.querySelector('meta[name="csrf-token"]')?.content;
+  if (metaToken) {
+    setCsrfToken(metaToken);
+  }
+
+  // Make an initial request to get a CSRF token
+  fetch('/', {
+    method: 'GET',
+    credentials: 'include'
+  }).then(response => {
+    const token = response.headers.get('X-CSRF-Token');
+    if (token) {
+      setCsrfToken(token);
+    }
+  });
 });
 
 // API Functions
+let csrfToken = '';
+
+function getCsrfToken() {
+  return csrfToken;
+}
+
+function setCsrfToken(token) {
+  if (token) {
+    csrfToken = token;
+  }
+}
+
+// Add response interceptor to capture CSRF token
+$.ajaxSetup({
+  beforeSend: function(xhr) {
+    xhr.setRequestHeader('X-CSRF-Token', getCsrfToken());
+  },
+  complete: function(xhr) {
+    const token = xhr.getResponseHeader('X-CSRF-Token');
+    if (token) {
+      setCsrfToken(token);
+    }
+  }
+});
+
 function likePost(postId) {
   const post = document.querySelector(`[postid="${postId}"]`);
   if (!post) {
@@ -116,10 +158,17 @@ function likePost(postId) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
-    }
+      'X-CSRF-Token': getCsrfToken()
+    },
+    credentials: 'include'
   })
-  .then(response => response.json())
+  .then(response => {
+    const token = response.headers.get('X-CSRF-Token');
+    if (token) {
+      setCsrfToken(token);
+    }
+    return response.json();
+  })
   .then(data => {
     if (data.success) {
       likeButton.classList.add('red');
@@ -142,10 +191,16 @@ function unlikePost(postId, $button) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+      'X-CSRF-Token': getCsrfToken()
     }
   })
-  .then(response => response.json())
+  .then(response => {
+    const token = response.headers.get('X-CSRF-Token');
+    if (token) {
+      setCsrfToken(token);
+    }
+    return response.json();
+  })
   .then(data => {
     if (data.success) {
       likeButton.classList.remove('red');
@@ -160,7 +215,7 @@ function likeComment(commentId, $button) {
     url: `/api/comments/${commentId}/like`,
     method: 'POST',
     headers: {
-      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      'X-CSRF-Token': getCsrfToken()
     },
     success: function(response) {
       $button.addClass('red');
@@ -177,7 +232,7 @@ function unlikeComment(commentId, $button) {
     url: `/api/comments/${commentId}/unlike`,
     method: 'POST',
     headers: {
-      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      'X-CSRF-Token': getCsrfToken()
     },
     success: function(response) {
       $button.removeClass('red');
@@ -194,7 +249,7 @@ function createComment(postId, text) {
     url: `/api/posts/${postId}/comments`,
     method: 'POST',
     headers: {
-      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      'X-CSRF-Token': getCsrfToken()
     },
     data: { text },
     success: function(response) {
@@ -241,10 +296,16 @@ function flagPost(postId) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+      'X-CSRF-Token': getCsrfToken()
     }
   })
-  .then(response => response.json())
+  .then(response => {
+    const token = response.headers.get('X-CSRF-Token');
+    if (token) {
+      setCsrfToken(token);
+    }
+    return response.json();
+  })
   .then(data => {
     if (data.success) {
       flagButton.classList.add('red');
@@ -263,10 +324,16 @@ function unflagPost(postId) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+      'X-CSRF-Token': getCsrfToken()
     }
   })
-  .then(response => response.json())
+  .then(response => {
+    const token = response.headers.get('X-CSRF-Token');
+    if (token) {
+      setCsrfToken(token);
+    }
+    return response.json();
+  })
   .then(data => {
     if (data.success) {
       flagButton.classList.remove('red');
@@ -334,14 +401,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function toggleCommentBox(postId) {
   const post = document.querySelector(`[postid="${postId}"]`);
-  const commentInput = post.querySelector('.comment-input');
+  const commentInput = post.querySelector('.newcomment');
   const isVisible = commentInput.style.display !== 'none';
-  
-  // Hide all other comment boxes first
-  document.querySelectorAll('.comment-input').forEach(input => {
-    input.style.display = 'none';
-  });
-  
-  // Toggle the clicked comment box
   commentInput.style.display = isVisible ? 'none' : 'flex';
-} 
+}

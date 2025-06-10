@@ -1,18 +1,6 @@
 const express = require('express');
-const session = require('express-session');
 const path = require('path');
 const app = express();
-
-// Session configuration - using memory store for development
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'your-secret-key',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 24 * 60 * 60 * 1000 // 24 hours
-  }
-}));
 
 // Middleware
 app.use(express.json());
@@ -21,19 +9,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-// Add CSRF token to all responses
+// Generate a CSRF token for each request
 app.use((req, res, next) => {
-  res.locals.csrfToken = req.session.csrfToken || Math.random().toString(36).substring(2);
-  req.session.csrfToken = res.locals.csrfToken;
+  const csrfToken = Math.random().toString(36).substring(2);
+  res.setHeader('X-CSRF-Token', csrfToken);
   next();
 });
 
 // Verify CSRF token for POST requests
 app.use((req, res, next) => {
   if (req.method === 'POST') {
-    const csrfToken = req.headers['x-csrf-token'] || req.body._csrf;
-    if (!csrfToken || csrfToken !== req.session.csrfToken) {
-      return res.status(403).json({ error: 'Invalid CSRF token' });
+    const csrfToken = req.headers['x-csrf-token'];
+    if (!csrfToken) {
+      return res.status(403).json({ error: 'Missing CSRF token' });
     }
   }
   next();
@@ -336,11 +324,9 @@ app.post('/api/comments/:commentId/unlike', (req, res) => {
 
 // Update the server listening configuration
 const port = process.env.PORT || 3000;
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
-}
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 // Export the Express app for Vercel
 module.exports = app; 
