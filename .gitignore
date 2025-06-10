@@ -1,41 +1,41 @@
 # Dependencies
-# node_modules/
-# npm-debug.log
-# yarn-debug.log
-# yarn-error.log
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
 # Environment variables
-# .env
-# .env.local
-# .env.*.local
+.env
+.env.local
+.env.*.local
 
 # OS generated files
-# .DS_Store
-# .DS_Store?
-# ._*
-# .Spotlight-V100
-# .Trashes
-# ehthumbs.db
-# Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # IDE files
-# .idea/
-# .vscode/
-# *.swp
-# *.swo
+.idea/
+.vscode/
+*.swp
+*.swo
 
 # Large media files
-# *.jpg
-# *.jpeg
-# *.png
-# *.gif
-# *.ico
-# *.mov
-# *.mp4
-# *.mp3
-# *.wav
+public/images/posts/*.jpg
+public/images/posts/*.jpeg
+public/images/posts/*.png
+public/images/posts/*.gif
 
 # Build files
-# dist/
-# build/
-# .vercel
+dist/
+build/
+.vercel/
+
+# Large files
+*.map
+*.min.css
+*.min.js
