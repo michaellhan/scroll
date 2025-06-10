@@ -4,94 +4,39 @@ html
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='theme-color', content='#4DA5F4')
-    meta(name='HandheldFriendly', content='True')
-    meta(name='apple-mobile-web-app-capable', content='yes')
-    meta(name='mobile-web-app-capable', content='yes')
-    meta(name='msapplication-tap-highlight', content='no')
+    meta(name='csrf-token', content=csrfToken)
     title scroll.
     link(rel='shortcut icon', href='/favicon.ico')
-    link(rel='manifest', href='/manifest.json')
     link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css')
     link(rel='stylesheet', href='/ui_layout.css')
     link(rel='stylesheet', href='/script.css')
     script(src='https://code.jquery.com/jquery-3.6.0.min.js')
     script(src='https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js')
-    script(src='/humanized_time_span.js')
-    script(src='/lazyload.transpiled.min.js')
     script.
       let numComments = -1;
-    script(src='/main.js')
     script(src='/postFunctionalities.js')
+    script(src='/main.js')
 
   body.dimmable
+    .ui.container(style='padding-top: 2em;')
+      h1(style='font-size: 2.5em; font-weight: 200; color: #333; text-align: center; margin-bottom: 0.2em;') scroll.
+      p(style='text-align: center; color: #666; font-size: 1.1em; margin-bottom: 2em;')
+        | Created by 
+        a(href='https://github.com/michaellhan', style='color: #4DA5F4; text-decoration: none;') Michael Han
+    
     .ui.vertically.padded.grid.container#pagegrid
-      .computer.only.tablet.only.row
-        .ui.borderless.fixed.menu
-          .ui.container
-            a.item(href='/')
-              img.ui.tiny.image#logo(src='/logo.png')
-            .right.menu
-              a.item.newpost
-                i.big.write.square.icon
-              a.item(href='/notifications')
-                i.big.alarm.icon
-              .ui.simple.dropdown.item
-                img.ui.mini.spaced.circular.image(src='/profile.jpg')
-                span(style='margin-right: 5px;') #{user.username}
-                i.dropdown.icon
-                .left.menu
-                  a.item(href='/me') My Profile
-                  a.item(href='/account') Update My Profile
-                  a.item(href='/com') View Community Rules
-                  a.item.logoutLink Log Out
-
-      .mobile.only.row
-        .ui.fluid.top.fixed.four.item.menu
-          a.item(href='/')
-            img.ui.tiny.image#mobile_logo(src='/logo.png')
-          a.item.newpost
-            i.big.write.square.icon
-          a.item(href='/notifications')
-            i.big.alarm.icon
-          .ui.simple.dropdown.item
-            img.ui.mini.spaced.circular.image(src='/profile.jpg')
-            i.dropdown.icon
-            .left.menu
-              a.item(href='/me') My Profile
-              a.item(href='/account') Update My Profile
-              a.item(href='/com') View Community Rules
-              a.item.logoutLink Log Out
-
       .ui.grid.container#pagecontainer
-        .computer.only.tablet.only.four.wide.column
-          .ui.card
-            .image
-              img(src='/profile.jpg')
-            .content
-              a.header(href='/me') #{user.email}
-              .meta @#{user.username}
-              .description(style='white-space: pre-wrap') #{user.bio}
-            .one.ui.bottom.attached.icon.buttons
-              button.ui.editprofile.button(data-tooltip='Update My Profile', data-position='bottom left')
-                i.write.icon
+        .sixteen.wide.column#loading(style='display: none;')
+          img.ui.centered.small.image(src='/images/icons/heart.svg', onerror="this.onerror=null;this.src='https://via.placeholder.com/50?text=Loading'")
 
-        .eight.wide.computer.ten.wide.tablet.sixteen.wide.mobile.column#loading(style='display: none;')
-          img.ui.centered.small.image(src='/heart.svg')
-
-        .eight.wide.computer.ten.wide.tablet.sixteen.wide.mobile.column.hidden#content(style='display: block;')
-          .ui.fluid.left.labeled.right.icon.input#newpost
-            .ui.label
-              img.ui.avatar.image(src='/profile.jpg')
-            input(type='text', placeholder='Create a post')
-            i.big.photo.link.icon
-
+        .sixteen.wide.column.hidden#content(style='display: block;')
           each post in posts
             .ui.fluid.card(postcondition='', postid=post._id, type='actor', actor_un=post.author.username, actor_name=post.author.name, actor_pic=post.author.profilePic)
               .content
                 .right.floated.time.meta= post.timeAgo
-                a(href='/user/' + post.author.username)
-                  img.ui.avatar.image.transition.visible(src=post.author.profilePic)
-                  span= post.author.name
+                .ui.avatar.image
+                  img(src=post.author.profilePic || '/images/profile/profile.jpg', onerror="this.onerror=null;this.src='/images/icons/no-avatar.png'")
+                span= post.author.name
               .content.dimmable
                 .ui.dimmer.flag
                   .content
@@ -105,7 +50,7 @@ html
                         i.flag.icon
                         |  Unflag
                 .img.post.image
-                  img(src=post.image, style='max-width: 100%; width: 100%; display: inline-block !important;', class='transition visible')
+                  img(src=post.image || '/images/icons/picture.svg', style='max-width: 100%; width: 100%; display: inline-block !important;', class='transition visible', onerror="this.onerror=null;this.src='/images/icons/picture.svg'")
                 .description= post.caption
                 .myTimer.hidden 0
               .ui.bottom.three.attached.icon.buttons
@@ -128,25 +73,31 @@ html
                         .text(style='background-color: black; color: white; padding: 0.2em;') You flagged this comment. The admins will review this comment further. We are sorry you had this experience.
                         .actions
                           a.unflag Unflag
-                      a.avatar(href='/user/' + comment.author.username)
-                        img(src=comment.author.profilePic)
+                      .ui.avatar.image
+                        img(src=comment.author.profilePic || '/images/profile/profile.jpg', onerror="this.onerror=null;this.src='/images/icons/no-avatar.png'")
                       .content
-                        a.author(href='/user/' + comment.author.username)= comment.author.name
-                        .metadata
-                          span.date= comment.timeAgo
-                          .rating
-                            i.heart.icon
-                            span.num= comment.likes
-                            |  Likes
-                        .text= comment.text
-                        .actions
-                          a.like.comment Like
-                          a.flag.comment Flag
+                        .header(style='display: flex; align-items: center; gap: 1em;')
+                          .author= comment.author.name
+                          .metadata
+                            span.date= comment.timeAgo
+                            .rating
+                              i.heart.icon
+                              span.num= comment.likes
+                              |  Likes
+                      .text= comment.text
+                      .actions
+                        a.like.comment Like
+                        a.flag.comment Flag
               .extra.content
                 .ui.fluid.left.labeled.right.icon.input
                   .ui.label
-                    img.ui.avatar.image.small(src='/profile.jpg', name=user.username)
+                    img.ui.avatar.image.small(src='/images/icons/no-avatar.png', name=user.username, onerror="this.onerror=null;this.src='/images/icons/no-avatar.png'")
                   .ui.form
                     .field
-                      textarea.newcomment(type='text', placeholder='Write a Comment', rows='1')
-                  i.big.send.link.icon 
+                      textarea.newcomment(type='text', placeholder='Write a Comment', rows='1', style='resize: none; border: none; background: transparent;')
+                  i.big.send.link.icon
+              .description
+                p= post.content
+
+        .sixteen.wide.column#loading(style='display: none;')
+          img.ui.centered.small.image(src='/images/icons/heart.svg', onerror="this.onerror=null;this.src='https://via.placeholder.com/50?text=Loading'") 

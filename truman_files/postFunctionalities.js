@@ -43,10 +43,12 @@ function likePost(e) {
 }
 
 function flagPost(e) {
-    const target = $(e.target);
+    e.preventDefault();
+    e.stopPropagation();
+    const target = $(e.target).closest('.ui.flag.button');
     const post = target.closest(".ui.fluid.card");
     const postID = post.attr("postID");
-    const postCondition = target.closest(".ui.fluid.card").attr("postCondition");
+    const postCondition = post.attr("postCondition");
     const flag = Date.now();
 
     $.post("/feed", {
