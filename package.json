@@ -1,11 +1,5 @@
 {
   "name": "scroll",
   "version": "1.0.0",
-  "description": "A social media simulation exploring digital consumption",
-  "scripts": {
-    "start": "serve ."
-  },
-  "dependencies": {
-    "serve": "^14.2.1"
-  }
+  "description": "A social media simulation exploring digital consumption"
 }

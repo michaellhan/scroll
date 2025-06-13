@@ -21,9 +21,9 @@ $(document).ready(function() {
                 <div class="content">
                     <div class="right floated time meta">${post.timeAgo}</div>
                     <div class="ui avatar image">
-                        <img src="${post.author.profilePic || 'public/images/icons/no-avatar.png'}" onerror="this.onerror=null;this.src='public/images/icons/no-avatar.png'">
+                        <img src="${post.author.profilePic || 'images/no-avatar.png'}" onerror="this.onerror=null;this.src='images/no-avatar.png'">
                     </div>
-                    <span>${post.author.name}</span>
+                    <span>${post.author.username}</span>
                 </div>
                 <div class="content dimmable">
                     <div class="ui dimmer flag">
@@ -44,7 +44,7 @@ $(document).ready(function() {
                         </div>
                     </div>
                     <div class="img post image">
-                        <img src="${post.image || 'public/images/icons/picture.svg'}" style="max-width: 100%; width: 100%; display: inline-block !important;" class="transition visible" onerror="this.onerror=null;this.src='public/images/icons/picture.svg'">
+                        <img src="${post.image || 'images/icons/picture.svg'}" style="max-width: 100%; width: 100%; display: inline-block !important;" class="transition visible" onerror="this.onerror=null;this.src='images/icons/picture.svg'">
                     </div>
                     <div class="description">${post.caption}</div>
                     <div class="myTimer hidden">0</div>
@@ -74,7 +74,7 @@ $(document).ready(function() {
                 <div class="extra content">
                     <div class="ui fluid left labeled right icon input">
                         <div class="ui label">
-                            <img class="ui avatar image small" src="public/images/icons/no-avatar.png" name="${user.username}" onerror="this.onerror=null;this.src='public/images/icons/no-avatar.png'">
+                            <img class="ui avatar image small" src="images/no-avatar.png" name="${user.username}" onerror="this.onerror=null;this.src='images/no-avatar.png'">
                         </div>
                         <div class="ui form">
                             <div class="field">
@@ -92,18 +92,12 @@ $(document).ready(function() {
     function createCommentHtml(comment) {
         return `
             <div class="comment" data-comment-id="${comment._id}">
-                <div class="content transition hidden">
-                    <div class="text" style="background-color: black; color: white; padding: 0.2em;">You flagged this comment. The admins will review this comment further. We are sorry you had this experience.</div>
-                    <div class="actions">
-                        <a class="unflag comment">Unflag</a>
-                    </div>
-                </div>
                 <div class="ui avatar image">
-                    <img src="${comment.author.profilePic || 'public/images/icons/no-avatar.png'}" onerror="this.onerror=null;this.src='public/images/icons/no-avatar.png'">
+                    <img src="${comment.author.profilePic || 'images/no-avatar.png'}" onerror="this.onerror=null;this.src='images/no-avatar.png'">
                 </div>
                 <div class="content">
-                    <div class="header" style="display: flex; align-items: center; gap: 1em;">
-                        <div class="author">${comment.author.name}</div>
+                    <div class="header" style="display: flex; align-items: center; gap: 0em;">
+                        <div class="author">${comment.author.username}</div>
                         <div class="metadata">
                             <span class="date">${comment.timeAgo}</span>
                             <div class="rating">
@@ -115,8 +109,9 @@ $(document).ready(function() {
                     </div>
                     <div class="text">${comment.text}</div>
                     <div class="actions">
-                        <a class="like comment ${comment.liked ? 'red' : ''}">Like</a>
+                        <a class="reply">Reply</a>
                         <a class="flag comment">Flag</a>
+                        <a class="like comment ${comment.liked ? 'red' : ''}">Like</a>
                     </div>
                 </div>
             </div>
@@ -183,6 +178,36 @@ $(document).ready(function() {
         }
     });
 
+    // Handle reply button click
+    $(document).on('click', '.reply.button', function() {
+        const $button = $(this);
+        const $card = $button.closest('.card');
+        const $textarea = $card.find('.newcomment');
+        const $form = $textarea.closest('.ui.form');
+        
+        // Clear any existing reply state
+        $textarea.attr('placeholder', 'Write a Comment');
+        $textarea.data('replying-to', null);
+        
+        // Focus the textarea
+        $textarea.focus();
+    });
+
+    // Handle reply to comment
+    $(document).on('click', '.comment .actions a.reply', function(e) {
+        e.preventDefault();
+        const $replyLink = $(this);
+        const $comment = $replyLink.closest('.comment');
+        const $card = $comment.closest('.card');
+        const $textarea = $card.find('.newcomment');
+        const username = $comment.find('.author').text();
+        
+        // Set reply state
+        $textarea.attr('placeholder', `Reply to ${username}`);
+        $textarea.data('replying-to', username);
+        $textarea.focus();
+    });
+
     // Handle comment submission
     $(document).on('click', '.send.link.icon', function() {
         const $icon = $(this);
@@ -191,6 +216,7 @@ $(document).ready(function() {
         const text = $textarea.val().trim();
         const postId = $card.attr('postid');
         const post = posts.find(p => p._id === postId);
+        const replyingTo = $textarea.data('replying-to');
         
         if (text && post) {
             const newComment = {
@@ -198,9 +224,9 @@ $(document).ready(function() {
                 author: {
                     username: user.username,
                     name: user.username,
-                    profilePic: 'public/images/icons/no-avatar.png'
+                    profilePic: 'images/no-avatar.png'
                 },
-                text: text,
+                text: replyingTo ? `@${replyingTo} ${text}` : text,
                 timeAgo: 'Just now',
                 likes: 0
             };
@@ -208,6 +234,8 @@ $(document).ready(function() {
             post.comments.push(newComment);
             $card.find('.ui.comments').append(createCommentHtml(newComment));
             $textarea.val('');
+            $textarea.attr('placeholder', 'Write a Comment');
+            $textarea.data('replying-to', null);
         }
     });
 
@@ -242,51 +270,33 @@ $(document).ready(function() {
 
     // Handle comment flag
     $(document).on('click', '.flag.comment', function(e) {
-        console.log('Flag button clicked');
-        console.log('Event target:', e.target);
-        
         const target = $(e.target);
-        console.log('Target element:', target);
-        
         const commentElement = target.parents(".comment");
-        console.log('Comment element:', commentElement);
+        const textElement = commentElement.find('.text');
         
-        const comment_imageElement = commentElement.children('.ui.avatar.image');
-        const comment_contentElement = commentElement.children('.content:not(.transition)');
-        const flaggedComment_contentElement = commentElement.children('.content.transition');
+        // Store original text if not already stored
+        if (!textElement.data('original-text')) {
+            textElement.data('original-text', textElement.text());
+        }
         
-        console.log('Image element:', comment_imageElement);
-        console.log('Content element:', comment_contentElement);
-        console.log('Flagged content element:', flaggedComment_contentElement);
+        // Replace text with flagged message
+        textElement.html('<div style="background-color: black; color: white; padding: 0.2em;">You flagged this comment. The admins will review this comment further. We are sorry you had this experience.</div>');
         
-        comment_imageElement.transition('hide');
-        comment_contentElement.transition('hide');
-        flaggedComment_contentElement.transition();
+        // Update the flag link to unflag
+        target.text('Unflag').removeClass('flag comment').addClass('unflag comment');
     });
 
     // Handle comment unflag
     $(document).on('click', '.unflag.comment', function(e) {
-        console.log('Unflag button clicked');
-        console.log('Event target:', e.target);
-        
         const target = $(e.target);
-        console.log('Target element:', target);
-        
         const commentElement = target.parents(".comment");
-        console.log('Comment element:', commentElement);
+        const textElement = commentElement.find('.text');
         
-        const comment_imageElement = commentElement.children('.ui.avatar.image.hidden');
-        const comment_contentElement = commentElement.children('.content.hidden');
-        const flaggedComment_contentElement = commentElement.children('.content:not(.hidden)');
+        // Restore original text
+        textElement.text(textElement.data('original-text'));
         
-        console.log('Image element:', comment_imageElement);
-        console.log('Content element:', comment_contentElement);
-        console.log('Flagged content element:', flaggedComment_contentElement);
-        
-        flaggedComment_contentElement.transition('hide');
-        comment_imageElement.transition();
-        comment_imageElement.find("img").visibility('refresh');
-        comment_contentElement.transition();
+        // Update the unflag link back to flag
+        target.text('Flag').removeClass('unflag comment').addClass('flag comment');
     });
 
     // Initialize the page

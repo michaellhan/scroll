@@ -42,11 +42,30 @@
   margin-left: 0.5em;
 }
 
+.ui.comments .comment {
+  padding: 0.5em 0;
+  position: relative;
+}
+
+.ui.comments .comment .content {
+  margin-left: 3.5em;
+  position: relative;
+}
+
+.ui.comments .comment .content.transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-left: 0;
+  z-index: 1;
+}
+
 .ui.comments .comment .content.transition.hidden {
   display: none;
 }
 
-.ui.comments .comment .content.transition.hidden .text {
+.ui.comments .comment .content.transition .text {
   background-color: black;
   color: white;
   padding: 0.5em;
@@ -54,17 +73,32 @@
   margin-bottom: 0.5em;
 }
 
-.ui.comments .comment .content.transition.hidden .actions {
+.ui.comments .comment .content.transition .actions {
   margin-top: 0.5em;
 }
 
-.ui.comments .comment .content.transition.hidden .actions a {
+.ui.comments .comment .content.transition .actions a {
   color: white;
   text-decoration: underline;
 }
 
-.ui.comments .comment .content.transition.hidden .actions a:hover {
+.ui.comments .comment .content.transition .actions a:hover {
   color: #f8f9fa;
+}
+
+.ui.comments .comment .ui.avatar.image {
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0;
+}
+
+.ui.comments .comment .ui.avatar.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .ui.form .field textarea.newcomment {
@@ -185,4 +219,18 @@
   .ui.comments .comment .content .actions a {
     font-size: 0.8em;
   }
+}
+
+.ui.comments .comment .content .text {
+  margin: 0.5em 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.ui.comments .comment .content .author {
+  font-weight: normal;
+}
+
+.ui.comments .comment .content .actions {
+  margin-top: 0.5em;
 } 

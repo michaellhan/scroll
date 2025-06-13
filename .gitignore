@@ -39,3 +39,4 @@ build/
 *.map
 *.min.css
 *.min.js
+.vercel
