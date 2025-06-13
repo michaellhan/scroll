@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4DA5F4">
+    <title>scroll.</title>
+    <link rel="shortcut icon" href="public/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="public/ui_layout.css">
+    <link rel="stylesheet" href="public/script.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="public/data.js"></script>
+    <script src="public/postFunctionalities.js"></script>
+    <script src="public/main.js"></script>
+</head>
+<body class="dimmable">
+    <div class="ui container" style="padding-top: 2em;">
+        <h1 style="font-size: 2.5em; font-weight: 200; color: #333; text-align: center; margin-bottom: 0.2em;">scroll.</h1>
+        <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 2em;">
+            Created by <a href="https://github.com/michaellhan" style="color: #4DA5F4; text-decoration: none;">Michael Han</a>
+        </p>
+    </div>
+
+    <div class="ui vertically padded grid container" id="pagegrid">
+        <div class="ui grid container" id="pagecontainer">
+            <div class="sixteen wide column" id="loading" style="display: none;">
+                <img class="ui centered small image" src="public/images/icons/heart.svg" onerror="this.onerror=null;this.src='https://via.placeholder.com/50?text=Loading'">
+            </div>
+
+            <div class="sixteen wide column" id="content" style="display: block;">
+                <!-- Posts will be dynamically inserted here -->
+            </div>
+
+            <div class="sixteen wide column" id="loading" style="display: none;">
+                <img class="ui centered small image" src="public/images/icons/heart.svg" onerror="this.onerror=null;this.src='https://via.placeholder.com/50?text=Loading'">
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

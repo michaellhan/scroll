@@ -2,30 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/**",
+      "src": "**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/app.js"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg))",
-      "dest": "/public/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/app.js"
+      "dest": "/$1"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "SESSION_SECRET": "SESSION_SECRET"
-  }
+  ]
 } 

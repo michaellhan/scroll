@@ -1,455 +1,294 @@
 $(document).ready(function() {
-  // Initialize Semantic UI components
-  $('.ui.dropdown').dropdown();
-  
-  // Initialize dimmers
-  $('.ui.fluid.card').each(function() {
-    const $card = $(this);
-    const $dimmer = $card.find('.ui.dimmer.flag');
-    $dimmer.dimmer({
-      closable: true,
-      onShow: function() {
-        console.log('Dimmer showing');
-      },
-      onHide: function() {
-        console.log('Dimmer hiding');
-      }
-    });
-  });
-  
-  // Add click handler for send icon
-  $('.send.link.icon').on('click', function() {
-    const $card = $(this).closest('.ui.card');
-    const $commentInput = $card.find('textarea.newcomment');
-    const text = $commentInput.val().trim();
-    const postId = $card.attr('postid');
-    if (text) {
-      createComment(postId, text);
-      $commentInput.val('');
+    // Initialize posts
+    function initializePosts() {
+        const $content = $('#content');
+        $content.empty();
+
+        posts.forEach(post => {
+            const postHtml = createPostHtml(post);
+            $content.append(postHtml);
+        });
+
+        // Initialize Semantic UI components
+        $('.ui.dropdown').dropdown();
+        $('.ui.accordion').accordion();
     }
-  });
-  
-  // Handle reply button clicks
-  $('.ui.reply.button').on('click', function() {
-    const $card = $(this).closest('.ui.card');
-    const $commentInput = $card.find('textarea.newcomment');
-    $commentInput.focus();
-  });
 
-  // Handle new comment submission
-  $('.newcomment').on('keypress', function(e) {
-    if (e.which === 13 && !e.shiftKey) {
-      e.preventDefault();
-      const text = $(this).val().trim();
-      const postId = $(this).closest('.ui.card').attr('postid');
-      if (text) {
-        createComment(postId, text);
-        $(this).val('');
-      }
-    }
-  });
-
-  // Handle like button clicks
-  $('.ui.like.button').on('click', function(e) {
-    const $button = $(this);
-    const postId = $button.closest('[postid]').attr('postid');
-    if ($button.hasClass('red')) {
-      unlikePost(postId, $button);
-    } else {
-      likePost(postId);
-    }
-  });
-
-  // Handle comment like clicks
-  $('.like.comment').on('click', function() {
-    const $button = $(this);
-    const commentId = $button.closest('.comment').attr('commentid');
-    const isLiked = $button.hasClass('red');
-    
-    if (isLiked) {
-      unlikeComment(commentId, $button);
-    } else {
-      likeComment(commentId, $button);
-    }
-  });
-
-  // Handle flag button clicks
-  $('.ui.flag.button').on('click', flagPost);
-
-  // Handle unflag actions
-  $('.unflag').on('click', unflagPost);
-
-  // Handle logout
-  $('.logoutLink').on('click', function(e) {
-    e.preventDefault();
-    logout();
-  });
-
-  // Handle new post button
-  $('.newpost').on('click', function() {
-    $('#newpost input').focus();
-  });
-
-  // Handle edit profile button
-  $('.editprofile').on('click', function() {
-    window.location.href = '/account';
-  });
-
-  // Auto-resize textareas
-  $('.newcomment').on('input', function() {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-  });
-
-  // Initialize CSRF token from meta tag if available
-  const metaToken = document.querySelector('meta[name="csrf-token"]')?.content;
-  if (metaToken) {
-    setCsrfToken(metaToken);
-  }
-
-  // Make an initial request to get a CSRF token
-  fetch('/', {
-    method: 'GET',
-    credentials: 'include'
-  }).then(response => {
-    const token = response.headers.get('X-CSRF-Token');
-    if (token) {
-      setCsrfToken(token);
-    }
-  });
-});
-
-// API Functions
-let csrfToken = '';
-
-function getCsrfToken() {
-  return csrfToken;
-}
-
-function setCsrfToken(token) {
-  if (token) {
-    csrfToken = token;
-  }
-}
-
-// Add response interceptor to capture CSRF token
-$.ajaxSetup({
-  beforeSend: function(xhr) {
-    xhr.setRequestHeader('X-CSRF-Token', getCsrfToken());
-  },
-  complete: function(xhr) {
-    const token = xhr.getResponseHeader('X-CSRF-Token');
-    if (token) {
-      setCsrfToken(token);
-    }
-  }
-});
-
-function likePost(postId) {
-  console.log('Like request received for post:', postId);
-  const post = document.querySelector(`[postid="${postId}"]`);
-  if (!post) {
-    console.error('Post element not found for postId:', postId);
-    return;
-  }
-  const likeButton = post.querySelector('.like.button');
-  const likeCount = post.querySelector('.count');
-  
-  // Update UI immediately
-  likeButton.classList.add('red');
-  const currentLikes = parseInt(likeCount.textContent);
-  likeCount.textContent = currentLikes + 1;
-  
-  // Make API call
-  fetch(`/api/posts/${postId}/like`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': getCsrfToken()
-    },
-    credentials: 'include'
-  })
-  .then(response => {
-    const token = response.headers.get('X-CSRF-Token');
-    if (token) {
-      setCsrfToken(token);
-    }
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Like response:', data);
-    if (data.success) {
-      likeCount.textContent = data.likes;
-    } else {
-      // Revert UI if server request failed
-      likeButton.classList.remove('red');
-      likeCount.textContent = currentLikes;
-      console.error('Server returned error:', data.error);
-    }
-  })
-  .catch(error => {
-    console.error('Error liking post:', error);
-    // Revert UI if request failed
-    likeButton.classList.remove('red');
-    likeCount.textContent = currentLikes;
-  });
-}
-
-function unlikePost(postId, $button) {
-  console.log('Unlike request received for post:', postId);
-  const post = document.querySelector(`[postid="${postId}"]`);
-  if (!post) {
-    console.error('Post element not found for postId:', postId);
-    return;
-  }
-  const likeButton = post.querySelector('.like.button');
-  const likeCount = post.querySelector('.count');
-  
-  // Update UI immediately
-  likeButton.classList.remove('red');
-  const currentLikes = parseInt(likeCount.textContent);
-  likeCount.textContent = Math.max(0, currentLikes - 1);
-  
-  // Make API call
-  fetch(`/api/posts/${postId}/unlike`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': getCsrfToken()
-    },
-    credentials: 'include'
-  })
-  .then(response => {
-    const token = response.headers.get('X-CSRF-Token');
-    if (token) {
-      setCsrfToken(token);
-    }
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Unlike response:', data);
-    if (data.success) {
-      likeCount.textContent = data.likes;
-    } else {
-      // Revert UI if server request failed
-      likeButton.classList.add('red');
-      likeCount.textContent = currentLikes;
-      console.error('Server returned error:', data.error);
-    }
-  })
-  .catch(error => {
-    console.error('Error unliking post:', error);
-    // Revert UI if request failed
-    likeButton.classList.add('red');
-    likeCount.textContent = currentLikes;
-  });
-}
-
-function likeComment(commentId, $button) {
-  $.ajax({
-    url: `/api/comments/${commentId}/like`,
-    method: 'POST',
-    headers: {
-      'X-CSRF-Token': getCsrfToken()
-    },
-    success: function(response) {
-      $button.addClass('red');
-      $button.closest('.comment').find('.num').text(response.likes);
-    },
-    error: function(error) {
-      console.error('Error liking comment:', error);
-    }
-  });
-}
-
-function unlikeComment(commentId, $button) {
-  $.ajax({
-    url: `/api/comments/${commentId}/unlike`,
-    method: 'POST',
-    headers: {
-      'X-CSRF-Token': getCsrfToken()
-    },
-    success: function(response) {
-      $button.removeClass('red');
-      $button.closest('.comment').find('.num').text(response.likes);
-    },
-    error: function(error) {
-      console.error('Error unliking comment:', error);
-    }
-  });
-}
-
-function createComment(postId, text) {
-  $.ajax({
-    url: `/api/posts/${postId}/comments`,
-    method: 'POST',
-    headers: {
-      'X-CSRF-Token': getCsrfToken()
-    },
-    data: { text },
-    success: function(response) {
-      const comment = response.comment;
-      const $comments = $(`.ui.card[postid="${postId}"] .ui.comments`);
-      
-      const commentHtml = `
-        <div class="comment" commentid="${comment._id}">
-          <a class="avatar" href="/user/${comment.author.username}">
-            <img src="${comment.author.profilePic}" onerror="this.onerror=null;this.src='https://via.placeholder.com/50?text=User'">
-          </a>
-          <div class="content">
-            <a class="author" href="/user/${comment.author.username}">${comment.author.name}</a>
-            <div class="metadata">
-              <span class="date">${comment.timeAgo}</span>
-              <div class="rating">
-                <i class="heart icon"></i>
-                <span class="num">${comment.likes}</span> Likes
-              </div>
+    // Create HTML for a post
+    function createPostHtml(post) {
+        return `
+            <div class="ui fluid card" postcondition="" postid="${post._id}" type="actor" actor_un="${post.author.username}" actor_name="${post.author.name}" actor_pic="${post.author.profilePic}">
+                <div class="content">
+                    <div class="right floated time meta">${post.timeAgo}</div>
+                    <div class="ui avatar image">
+                        <img src="${post.author.profilePic || 'public/images/icons/no-avatar.png'}" onerror="this.onerror=null;this.src='public/images/icons/no-avatar.png'">
+                    </div>
+                    <span>${post.author.name}</span>
+                </div>
+                <div class="content dimmable">
+                    <div class="ui dimmer flag">
+                        <div class="content">
+                            <div class="center">
+                                <h2 class="ui inverted icon header">
+                                    <i class="red flag icon"></i>
+                                    You've flagged this!
+                                </h2>
+                                <h3 class="ui inverted header">
+                                    <span>The admins will review this post further. We are sorry you had this experience.</span>
+                                </h3>
+                                <div class="ui inverted unflag button" tabindex="0">
+                                    <i class="flag icon"></i>
+                                    Unflag
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img post image">
+                        <img src="${post.image || 'public/images/icons/picture.svg'}" style="max-width: 100%; width: 100%; display: inline-block !important;" class="transition visible" onerror="this.onerror=null;this.src='public/images/icons/picture.svg'">
+                    </div>
+                    <div class="description">${post.caption}</div>
+                    <div class="myTimer hidden">0</div>
+                </div>
+                <div class="ui bottom three attached icon buttons">
+                    <div class="ui reply button" tabindex="0">
+                        <i class="reply icon"></i>
+                        Reply
+                    </div>
+                    <div class="ui flag button" tabindex="0">
+                        <i class="flag icon"></i>
+                        Flag
+                    </div>
+                    <div class="ui labeled button" tabindex="0">
+                        <div class="ui like button">
+                            <i class="heart icon"></i>
+                            Like
+                        </div>
+                        <a class="ui basic red left pointing label count">${post.likes}</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="ui comments">
+                        ${post.comments.map(comment => createCommentHtml(comment)).join('')}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="ui fluid left labeled right icon input">
+                        <div class="ui label">
+                            <img class="ui avatar image small" src="public/images/icons/no-avatar.png" name="${user.username}" onerror="this.onerror=null;this.src='public/images/icons/no-avatar.png'">
+                        </div>
+                        <div class="ui form">
+                            <div class="field">
+                                <textarea class="newcomment" type="text" placeholder="Write a Comment" rows="1" style="resize: none; border: none; background: transparent;"></textarea>
+                            </div>
+                        </div>
+                        <i class="big send link icon"></i>
+                    </div>
+                </div>
             </div>
-            <div class="text">${comment.text}</div>
-            <div class="actions">
-              <a class="like comment">Like</a>
-              <a class="flag comment">Flag</a>
+        `;
+    }
+
+    // Create HTML for a comment
+    function createCommentHtml(comment) {
+        return `
+            <div class="comment" data-comment-id="${comment._id}">
+                <div class="content transition hidden">
+                    <div class="text" style="background-color: black; color: white; padding: 0.2em;">You flagged this comment. The admins will review this comment further. We are sorry you had this experience.</div>
+                    <div class="actions">
+                        <a class="unflag comment">Unflag</a>
+                    </div>
+                </div>
+                <div class="ui avatar image">
+                    <img src="${comment.author.profilePic || 'public/images/icons/no-avatar.png'}" onerror="this.onerror=null;this.src='public/images/icons/no-avatar.png'">
+                </div>
+                <div class="content">
+                    <div class="header" style="display: flex; align-items: center; gap: 1em;">
+                        <div class="author">${comment.author.name}</div>
+                        <div class="metadata">
+                            <span class="date">${comment.timeAgo}</span>
+                            <div class="rating">
+                                <i class="heart icon ${comment.liked ? 'red' : ''}"></i>
+                                <span class="num">${comment.likes || 0}</span>
+                                Likes
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">${comment.text}</div>
+                    <div class="actions">
+                        <a class="like comment ${comment.liked ? 'red' : ''}">Like</a>
+                        <a class="flag comment">Flag</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      `;
-      
-      $comments.append(commentHtml);
-    },
-    error: function(error) {
-      console.error('Error creating comment:', error);
+        `;
     }
-  });
-}
 
-function flagPost(postId) {
-  const post = document.querySelector(`[postid="${postId}"]`);
-  const flagButton = post.querySelector('.flag.button');
-  const dimmer = post.querySelector('.dimmer.flag');
-  
-  fetch(`/api/posts/${postId}/flag`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': getCsrfToken()
-    }
-  })
-  .then(response => {
-    const token = response.headers.get('X-CSRF-Token');
-    if (token) {
-      setCsrfToken(token);
-    }
-    return response.json();
-  })
-  .then(data => {
-    if (data.success) {
-      flagButton.classList.add('red');
-      $(dimmer).dimmer('show');
-    }
-  })
-  .catch(error => console.error('Error:', error));
-}
-
-function unflagPost(postId) {
-  const post = document.querySelector(`[postid="${postId}"]`);
-  const flagButton = post.querySelector('.flag.button');
-  const dimmer = post.querySelector('.dimmer.flag');
-  
-  fetch(`/api/posts/${postId}/unflag`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': getCsrfToken()
-    }
-  })
-  .then(response => {
-    const token = response.headers.get('X-CSRF-Token');
-    if (token) {
-      setCsrfToken(token);
-    }
-    return response.json();
-  })
-  .then(data => {
-    if (data.success) {
-      flagButton.classList.remove('red');
-      $(dimmer).dimmer('hide');
-    }
-  })
-  .catch(error => console.error('Error:', error));
-}
-
-function logout() {
-  $.post('/logout')
-    .done(function() {
-      window.location.href = '/login';
-    })
-    .fail(function(error) {
-      console.error('Error logging out:', error);
+    // Handle like button click
+    $(document).on('click', '.like.button', function() {
+        const $button = $(this);
+        const $card = $button.closest('.card');
+        const postId = $card.attr('postid');
+        const post = posts.find(p => p._id === postId);
+        
+        if (post) {
+            if (!post.liked) {
+                post.likes += 1;
+                post.liked = true;
+                $button.addClass('red');
+                $card.find('.count').text(post.likes);
+            }
+        }
     });
-}
 
-// Event Listeners
-document.addEventListener('DOMContentLoaded', function() {
-  // Like button click handler
-  document.querySelectorAll('.like.button').forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const postId = this.closest('[postid]').getAttribute('postid');
-      console.log('Like button clicked for post:', postId);
-      
-      if (this.classList.contains('red')) {
-        unlikePost(postId, this);
-      } else {
-        likePost(postId);
-      }
+    // Handle unlike button click
+    $(document).on('click', '.like.button.red', function() {
+        const $button = $(this);
+        const $card = $button.closest('.card');
+        const postId = $card.attr('postid');
+        const post = posts.find(p => p._id === postId);
+        
+        if (post) {
+            if (post.liked) {
+                post.likes = Math.max(0, post.likes - 1);
+                post.liked = false;
+                $button.removeClass('red');
+                $card.find('.count').text(post.likes);
+            }
+        }
     });
-  });
 
-  // Reply button click handler
-  document.querySelectorAll('.reply.button').forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const postId = this.closest('[postid]').getAttribute('postid');
-      toggleCommentBox(postId);
+    // Handle flag button click
+    $(document).on('click', '.flag.button', function() {
+        const $button = $(this);
+        const $card = $button.closest('.card');
+        const postId = $card.attr('postid');
+        const post = posts.find(p => p._id === postId);
+        
+        if (post) {
+            post.flagged = true;
+            $card.find('.dimmer.flag').dimmer('show');
+        }
     });
-  });
 
-  // Flag button click handler
-  document.querySelectorAll('.flag.button').forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const postId = this.closest('[postid]').getAttribute('postid');
-      flagPost(postId);
+    // Handle unflag button click
+    $(document).on('click', '.unflag.button', function() {
+        const $button = $(this);
+        const $card = $button.closest('.card');
+        const postId = $card.attr('postid');
+        const post = posts.find(p => p._id === postId);
+        
+        if (post) {
+            post.flagged = false;
+            $card.find('.dimmer.flag').dimmer('hide');
+        }
     });
-  });
 
-  // Unflag button click handler
-  document.querySelectorAll('.unflag.button').forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const postId = this.closest('[postid]').getAttribute('postid');
-      unflagPost(postId);
+    // Handle comment submission
+    $(document).on('click', '.send.link.icon', function() {
+        const $icon = $(this);
+        const $card = $icon.closest('.card');
+        const $textarea = $card.find('.newcomment');
+        const text = $textarea.val().trim();
+        const postId = $card.attr('postid');
+        const post = posts.find(p => p._id === postId);
+        
+        if (text && post) {
+            const newComment = {
+                _id: Date.now().toString(),
+                author: {
+                    username: user.username,
+                    name: user.username,
+                    profilePic: 'public/images/icons/no-avatar.png'
+                },
+                text: text,
+                timeAgo: 'Just now',
+                likes: 0
+            };
+            
+            post.comments.push(newComment);
+            $card.find('.ui.comments').append(createCommentHtml(newComment));
+            $textarea.val('');
+        }
     });
-  });
 
-  // Prevent flag button from triggering when clicking post image
-  document.querySelectorAll('.img.post.image').forEach(img => {
-    img.addEventListener('click', function(e) {
-      e.stopPropagation();
+    // Handle comment like
+    $(document).on('click', '.like.comment', function(e) {
+        console.log('Like button clicked');
+        console.log('Event target:', e.target);
+        
+        const target = $(e.target);
+        console.log('Target element:', target);
+        
+        const comment = target.parents(".comment");
+        console.log('Comment element:', comment);
+        
+        const label = comment.find("span.num");
+        console.log('Like count element:', label);
+        
+        if (target.hasClass("red")) { // Unlike comment
+            console.log('Unliking comment');
+            target.removeClass("red");
+            comment.find("i.heart.icon").removeClass("red");
+            target.html('Like');
+            label.html(function(i, val) { return val * 1 - 1 });
+        } else { // Like comment
+            console.log('Liking comment');
+            target.addClass("red");
+            comment.find("i.heart.icon").addClass("red");
+            target.html('Unlike');
+            label.html(function(i, val) { return val * 1 + 1 });
+        }
     });
-  });
+
+    // Handle comment flag
+    $(document).on('click', '.flag.comment', function(e) {
+        console.log('Flag button clicked');
+        console.log('Event target:', e.target);
+        
+        const target = $(e.target);
+        console.log('Target element:', target);
+        
+        const commentElement = target.parents(".comment");
+        console.log('Comment element:', commentElement);
+        
+        const comment_imageElement = commentElement.children('.ui.avatar.image');
+        const comment_contentElement = commentElement.children('.content:not(.transition)');
+        const flaggedComment_contentElement = commentElement.children('.content.transition');
+        
+        console.log('Image element:', comment_imageElement);
+        console.log('Content element:', comment_contentElement);
+        console.log('Flagged content element:', flaggedComment_contentElement);
+        
+        comment_imageElement.transition('hide');
+        comment_contentElement.transition('hide');
+        flaggedComment_contentElement.transition();
+    });
+
+    // Handle comment unflag
+    $(document).on('click', '.unflag.comment', function(e) {
+        console.log('Unflag button clicked');
+        console.log('Event target:', e.target);
+        
+        const target = $(e.target);
+        console.log('Target element:', target);
+        
+        const commentElement = target.parents(".comment");
+        console.log('Comment element:', commentElement);
+        
+        const comment_imageElement = commentElement.children('.ui.avatar.image.hidden');
+        const comment_contentElement = commentElement.children('.content.hidden');
+        const flaggedComment_contentElement = commentElement.children('.content:not(.hidden)');
+        
+        console.log('Image element:', comment_imageElement);
+        console.log('Content element:', comment_contentElement);
+        console.log('Flagged content element:', flaggedComment_contentElement);
+        
+        flaggedComment_contentElement.transition('hide');
+        comment_imageElement.transition();
+        comment_imageElement.find("img").visibility('refresh');
+        comment_contentElement.transition();
+    });
+
+    // Initialize the page
+    initializePosts();
 });
-
-function toggleCommentBox(postId) {
-  const post = document.querySelector(`[postid="${postId}"]`);
-  const commentInput = post.querySelector('.newcomment');
-  const isVisible = commentInput.style.display !== 'none';
-  commentInput.style.display = isVisible ? 'none' : 'flex';
-}
