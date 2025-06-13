@@ -10,7 +10,7 @@ const posts = [
     {
         _id: '1',
         author: {
-            username: 'michelle.l',
+            username: 'michi.loop',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx.jpg',
@@ -21,39 +21,29 @@ const posts = [
             {
                 _id: '1',
                 author: {
-                    username: 'nina.draws',
+                    username: 'zoe.exe',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'the setup is so aesthetic omg',
-                timeAgo: '6:48 PM',
-                likes: 22
+                text: 'your tabs scare me (respectfully)',
+                timeAgo: '6h ago',
+                likes: 18
             },
             {
                 _id: '2',
                 author: {
-                    username: 'jaycodes',
+                    username: 'rinn.ink',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'is that the same doc from last week lol',
-                timeAgo: '6:51 PM',
-                likes: 16
-            },
-            {
-                _id: '3',
-                author: {
-                    username: 'vi_reads',
-                    profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
-                },
-                text: 'this makes me want to be productive',
-                timeAgo: '6:53 PM',
-                likes: 34
+                text: 'do you even know what the doc says anymore?',
+                timeAgo: '6h ago',
+                likes: 12
             }
         ]
     },
     {
         _id: '2',
         author: {
-            username: 'kevin.jiang',
+            username: 'kfilm.jpeg',
             profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
         },
         image: 'images/Image_fx (1).jpg',
@@ -64,39 +54,39 @@ const posts = [
             {
                 _id: '4',
                 author: {
-                    username: 'diana.m_',
+                    username: 'haley4evaa',
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
-                text: 'this is giving movie scene',
-                timeAgo: '6:55 PM',
-                likes: 45
+                text: 'i still hear us laughing here',
+                timeAgo: '6h ago',
+                likes: 24
             },
             {
                 _id: '5',
                 author: {
-                    username: 'aaron.loop',
+                    username: 'zara.sipslow',
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
-                text: 'I miss that day fr',
-                timeAgo: '6:57 PM',
-                likes: 29
+                text: 'i miss the warmth in this',
+                timeAgo: '6h ago',
+                likes: 15
             },
             {
                 _id: '6',
                 author: {
-                    username: 'livvy.px',
-                    profilePic: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150'
+                    username: 'lukewastaken',
+                    profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
-                text: 'can I steal this for my lockscreen',
-                timeAgo: '6:59 PM',
-                likes: 38
+                text: 'sunset always lies a little',
+                timeAgo: '6h ago',
+                likes: 19
             }
         ]
     },
     {
         _id: '3',
         author: {
-            username: 'sophiawrites',
+            username: 'soph.scraps',
             profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
         },
         image: 'images/Image_fx (2).jpg',
@@ -107,39 +97,29 @@ const posts = [
             {
                 _id: '7',
                 author: {
-                    username: 'tia.in.ink',
+                    username: 'milo_ondeck',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'comfy core 🔥',
-                timeAgo: '7:03 PM',
-                likes: 12
+                text: 'mirror again? comforting',
+                timeAgo: '6h ago',
+                likes: 11
             },
             {
                 _id: '8',
                 author: {
-                    username: 'ryan.snaps',
+                    username: 'milliecake99',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'mirror is so clean tho??',
-                timeAgo: '7:05 PM',
-                likes: 18
-            },
-            {
-                _id: '9',
-                author: {
-                    username: 'cait.typing',
-                    profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
-                },
-                text: 'ur room is so cozy omg',
-                timeAgo: '7:07 PM',
-                likes: 25
+                text: 'cozy but different cozy',
+                timeAgo: '6h ago',
+                likes: 8
             }
         ]
     },
     {
         _id: '4',
         author: {
-            username: 'amelia.bday',
+            username: 'milliecake99',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (3).jpg',
@@ -148,41 +128,41 @@ const posts = [
         likes: 231,
         comments: [
             {
-                _id: '10',
-                author: {
-                    username: 'max.thoughts',
-                    profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
-                },
-                text: 'happy birthday!!! 🎉',
-                timeAgo: '7:10 PM',
-                likes: 52
-            },
-            {
                 _id: '11',
                 author: {
-                    username: 'sasha.frame',
-                    profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
+                    username: 'kitch.riot',
+                    profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
-                text: 'save me a piece 👀',
-                timeAgo: '7:12 PM',
-                likes: 19
+                text: 'save me a piece, liar',
+                timeAgo: '5h ago',
+                likes: 13
             },
             {
                 _id: '12',
                 author: {
-                    username: 'niko.gtr',
-                    profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
+                    username: 'noraislost',
+                    profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
-                text: 'love that plate lol',
-                timeAgo: '7:14 PM',
-                likes: 8
+                text: 'that plate is the only constant',
+                timeAgo: '5h ago',
+                likes: 16
+            },
+            {
+                _id: '13',
+                author: {
+                    username: 'jamie.crumb',
+                    profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
+                },
+                text: 'happy bday again again again 🎉',
+                timeAgo: '5h ago',
+                likes: 9
             }
         ]
     },
     {
         _id: '5',
         author: {
-            username: 'chef.lee',
+            username: 'kitch.riot',
             profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
         },
         image: 'images/Image_fx (4).jpg',
@@ -191,21 +171,31 @@ const posts = [
         likes: 87,
         comments: [
             {
-                _id: '13',
+                _id: '14',
                 author: {
-                    username: 'gracieeats',
+                    username: 'bakerbench0',
+                    profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
+                },
+                text: 'mess is the flavor tbh',
+                timeAgo: '5h ago',
+                likes: 17
+            },
+            {
+                _id: '15',
+                author: {
+                    username: 'milliecake99',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this is how you KNOW it\'s gonna be good',
-                timeAgo: '7:19 PM',
-                likes: 31
+                text: 'looks like chaos, smells like joy',
+                timeAgo: '5h ago',
+                likes: 12
             }
         ]
     },
     {
         _id: '6',
         author: {
-            username: 'julesandmilo',
+            username: 'milo_ondeck',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (5).jpg',
@@ -216,39 +206,19 @@ const posts = [
             {
                 _id: '16',
                 author: {
-                    username: 'pet.pixel',
+                    username: 'dan.yawn',
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
-                text: 'as he should 👑',
-                timeAgo: '7:15 PM',
-                likes: 39
-            },
-            {
-                _id: '17',
-                author: {
-                    username: 'dan.yawn',
-                    profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
-                },
-                text: 'I want his life fr',
-                timeAgo: '7:20 PM',
-                likes: 27
-            },
-            {
-                _id: '18',
-                author: {
-                    username: 'sienna.bug',
-                    profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
-                },
-                text: 'this is art',
-                timeAgo: '7:20 PM',
-                likes: 33
+                text: 'i\'m jealous of this cat',
+                timeAgo: '4h ago',
+                likes: 14
             }
         ]
     },
     {
         _id: '7',
         author: {
-            username: 'haleygroupchat',
+            username: 'haley4evaa',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (6).jpg',
@@ -259,39 +229,39 @@ const posts = [
             {
                 _id: '19',
                 author: {
-                    username: 'leo.camera',
+                    username: 'kfilm.jpeg',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this day was underrated 🔥',
-                timeAgo: '7:30 PM',
-                likes: 26
+                text: 'this light doesn\'t exist anymore',
+                timeAgo: '4h ago',
+                likes: 13
             },
             {
                 _id: '20',
                 author: {
-                    username: 'tina.cloud',
+                    username: 'hal.dot',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'I love this group sm',
-                timeAgo: '7:30 PM',
-                likes: 34
+                text: 'tag urself i\'m the invisible one',
+                timeAgo: '4h ago',
+                likes: 17
             },
             {
                 _id: '21',
                 author: {
-                    username: 'jamessays',
+                    username: 'soph.scraps',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'tag urself I\'m the one dropping the ice cream',
-                timeAgo: '7:30 PM',
-                likes: 41
+                text: 'can\'t tell if i was there or not',
+                timeAgo: '4h ago',
+                likes: 10
             }
         ]
     },
     {
         _id: '8',
         author: {
-            username: 'notes.by.rin',
+            username: 'rinn.ink',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (7).jpg',
@@ -302,31 +272,11 @@ const posts = [
             {
                 _id: '22',
                 author: {
-                    username: 'carla.inks',
+                    username: 'michi.loop',
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
-                text: 'it looks like a conspiracy theory but I get it',
-                timeAgo: '7:40 PM',
-                likes: 17
-            },
-            {
-                _id: '23',
-                author: {
-                    username: 'syd.sketches',
-                    profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
-                },
-                text: 'this is how my brain looks',
-                timeAgo: '7:40 PM',
-                likes: 23
-            },
-            {
-                _id: '24',
-                author: {
-                    username: 'xavier.notes',
-                    profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
-                },
-                text: 'same layout I used for calc lmao',
-                timeAgo: '7:40 PM',
+                text: 'i see the logic beneath the chaos',
+                timeAgo: '3h ago',
                 likes: 12
             }
         ]
@@ -334,7 +284,7 @@ const posts = [
     {
         _id: '9',
         author: {
-            username: 'ethan.drives',
+            username: 'ethandrivesalone',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (8).jpg',
@@ -345,39 +295,29 @@ const posts = [
             {
                 _id: '25',
                 author: {
-                    username: 'noah.road',
+                    username: 'zara.sipslow',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this mood is too real',
-                timeAgo: '7:45 PM',
-                likes: 30
+                text: 'same here. different windshield.',
+                timeAgo: '3h ago',
+                likes: 14
             },
             {
                 _id: '26',
                 author: {
-                    username: 'emmy.whispers',
-                    profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
-                },
-                text: 'feels like the opening to a sad indie movie',
-                timeAgo: '7:45 PM',
-                likes: 26
-            },
-            {
-                _id: '27',
-                author: {
-                    username: 'breeee.42',
+                    username: 'no.reply',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'raincore aesthetic 🌧️',
-                timeAgo: '7:45 PM',
-                likes: 18
+                text: 'this post smells like wet concrete',
+                timeAgo: '3h ago',
+                likes: 11
             }
         ]
     },
     {
         _id: '10',
         author: {
-            username: 'zara.sips',
+            username: 'zara.sipslow',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (9).jpg',
@@ -388,31 +328,21 @@ const posts = [
             {
                 _id: '28',
                 author: {
-                    username: 'milo.audible',
+                    username: 'kfilm.jpeg',
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
-                text: 'this post smells like cinnamon',
-                timeAgo: '7:50 PM',
-                likes: 22
+                text: 'this corner is a loop in disguise',
+                timeAgo: '2h ago',
+                likes: 15
             },
             {
                 _id: '29',
                 author: {
-                    username: 'hannah.doodles',
+                    username: 'zoe.exe',
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
-                text: 'I always think better in cafes too',
-                timeAgo: '7:50 PM',
-                likes: 15
-            },
-            {
-                _id: '30',
-                author: {
-                    username: 'li.journal',
-                    profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
-                },
-                text: 'cute mug!!',
-                timeAgo: '7:50 PM',
+                text: 'new thoughts. same lag.',
+                timeAgo: '2h ago',
                 likes: 12
             }
         ]
@@ -420,7 +350,7 @@ const posts = [
     {
         _id: '11',
         author: {
-            username: 'bookish.nora',
+            username: 'noraislost',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (10).jpg',
@@ -434,36 +364,16 @@ const posts = [
                     username: 'elise.words',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this hits',
-                timeAgo: '7:55 PM',
+                text: 'this hits softer than it should',
+                timeAgo: '2h ago',
                 likes: 14
-            },
-            {
-                _id: '32',
-                author: {
-                    username: 'markpage',
-                    profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
-                },
-                text: 'what book tho 👀',
-                timeAgo: '7:55 PM',
-                likes: 19
-            },
-            {
-                _id: '33',
-                author: {
-                    username: 'amy.reviews',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'you always pick the prettiest lighting',
-                timeAgo: '7:55 PM',
-                likes: 21
             }
         ]
     },
     {
         _id: '12',
         author: {
-            username: 'luke.up.there',
+            username: 'lukewastaken',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (11).jpg',
@@ -474,39 +384,29 @@ const posts = [
             {
                 _id: '34',
                 author: {
-                    username: 'isaacsteps',
+                    username: 'zoe.exe',
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
-                text: 'same caption as my inner voice',
-                timeAgo: '7:55 PM',
-                likes: 28
+                text: 'caption\'s glitching again huh',
+                timeAgo: '1h ago',
+                likes: 11
             },
             {
                 _id: '35',
                 author: {
-                    username: 'raya.sun',
+                    username: 'rinn.ink',
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
-                text: 'the lighting is oddly perfect for this',
-                timeAgo: '7:55 PM',
-                likes: 14
-            },
-            {
-                _id: '36',
-                author: {
-                    username: 'toma.looks',
-                    profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
-                },
-                text: 'this post is a vibe and a cry for help',
-                timeAgo: '7:55 PM',
-                likes: 31
+                text: 'the lighting said otherwise',
+                timeAgo: '1h ago',
+                likes: 9
             }
         ]
     },
     {
         _id: '13',
         author: {
-            username: 'virtual.zoe',
+            username: 'zoe.exe',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (12).jpg',
@@ -517,39 +417,19 @@ const posts = [
             {
                 _id: '37',
                 author: {
-                    username: 'cassie.types',
+                    username: 'dev.incall',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'honestly miss this chaos',
-                timeAgo: '8:05 PM',
-                likes: 23
-            },
-            {
-                _id: '38',
-                author: {
-                    username: 'dev.incall',
-                    profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
-                },
-                text: 'I\'m the square that\'s frozen 😭',
-                timeAgo: '8:05 PM',
-                likes: 18
-            },
-            {
-                _id: '39',
-                author: {
-                    username: 'marnie.rants',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'remember the quizlet tab tho 💀',
-                timeAgo: '8:05 PM',
-                likes: 33
+                text: 'i\'m the frozen square again 😭',
+                timeAgo: '1h ago',
+                likes: 13
             }
         ]
     },
     {
         _id: '14',
         author: {
-            username: 'light.this.week',
+            username: 'lightweekly',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (13).jpg',
@@ -560,39 +440,29 @@ const posts = [
             {
                 _id: '40',
                 author: {
-                    username: 'kai.smokes',
+                    username: 'noraislost',
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
-                text: 'you post like a poem',
-                timeAgo: '8:10 PM',
-                likes: 25
+                text: 'i want to live here for 30 seconds',
+                timeAgo: '1h ago',
+                likes: 14
             },
             {
                 _id: '41',
                 author: {
-                    username: 'elena.dreams',
+                    username: 'kai.smokes',
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
-                text: 'I needed this today',
-                timeAgo: '8:10 PM',
-                likes: 21
-            },
-            {
-                _id: '42',
-                author: {
-                    username: 'ro.ro',
-                    profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
-                },
-                text: 'I want to live in this frame',
-                timeAgo: '8:10 PM',
-                likes: 19
+                text: 'burn slow. think soft.',
+                timeAgo: '1h ago',
+                likes: 11
             }
         ]
     },
     {
         _id: '15',
         author: {
-            username: 'lin.lockers',
+            username: 'lin2hallway',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (14).jpg',
@@ -603,31 +473,31 @@ const posts = [
             {
                 _id: '43',
                 author: {
-                    username: 'megs.sch',
+                    username: 'haley4evaa',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'ugh this is too real',
-                timeAgo: '8:20 PM',
-                likes: 27
+                text: 'too real i hate how real',
+                timeAgo: '1h ago',
+                likes: 13
             },
             {
                 _id: '44',
                 author: {
-                    username: 'kyle.yrn',
+                    username: 'rinn.ink',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'caption of the semester',
-                timeAgo: '8:20 PM',
-                likes: 31
+                text: 'i know this floor by feel',
+                timeAgo: '1h ago',
+                likes: 10
             },
             {
                 _id: '45',
                 author: {
-                    username: 'jena.routes',
+                    username: 'michi.loop',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'I know this exact hallway smell',
-                timeAgo: '8:20 PM',
+                text: 'caption of the semester tbh',
+                timeAgo: '1h ago',
                 likes: 15
             }
         ]
@@ -635,7 +505,7 @@ const posts = [
     {
         _id: '16',
         author: {
-            username: 'notes.by.rin',
+            username: 'rinn.ink',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (15).jpg',
@@ -646,39 +516,29 @@ const posts = [
             {
                 _id: '46',
                 author: {
-                    username: 'keiko.42',
+                    username: 'kfilm.jpeg',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'that corner\'s kinda deep ngl',
-                timeAgo: '8:25 PM',
-                likes: 14
+                text: 'that corner doodle is holding the whole braincell',
+                timeAgo: '46m ago',
+                likes: 12
             },
             {
                 _id: '47',
                 author: {
-                    username: 'alex.wired',
+                    username: 'lightweekly',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'same handwriting as my dream journal',
-                timeAgo: '8:25 PM',
+                text: 'looks like it\'s thinking for you',
+                timeAgo: '46m ago',
                 likes: 7
-            },
-            {
-                _id: '48',
-                author: {
-                    username: 'grace.glow',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'I feel like I\'ve seen this before??',
-                timeAgo: '8:25 PM',
-                likes: 19
             }
         ]
     },
     {
         _id: '17',
         author: {
-            username: 'michelle.l',
+            username: 'michi.loop',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (16).jpg',
@@ -689,31 +549,31 @@ const posts = [
             {
                 _id: '49',
                 author: {
-                    username: 'daniel.lines',
+                    username: 'haley4evaa',
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
-                text: 'you\'re in the same spot lol',
-                timeAgo: '8:35 PM',
+                text: 'do u ever leave this desk orrrr',
+                timeAgo: '42m ago',
                 likes: 11
             },
             {
                 _id: '50',
                 author: {
-                    username: 'hannah.codes',
+                    username: 'zara.sipslow',
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
-                text: 'I respect the grind (and the plant)',
-                timeAgo: '8:35 PM',
-                likes: 16
+                text: 'same energy diff beverage',
+                timeAgo: '42m ago',
+                likes: 13
             },
             {
                 _id: '51',
                 author: {
-                    username: 'sunil.up',
+                    username: 'rinn.ink',
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
-                text: 'study loop engaged',
-                timeAgo: '8:35 PM',
+                text: 'plant\'s giving up in solidarity',
+                timeAgo: '41m ago',
                 likes: 9
             }
         ]
@@ -721,7 +581,7 @@ const posts = [
     {
         _id: '18',
         author: {
-            username: 'sophiawrites',
+            username: 'soph.scraps',
             profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
         },
         image: 'images/Image_fx (17).jpg',
@@ -732,39 +592,29 @@ const posts = [
             {
                 _id: '52',
                 author: {
-                    username: 'megan.irl',
+                    username: 'lin2hallway',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'this one\'s giving tired but cute',
-                timeAgo: '8:45 PM',
-                likes: 12
+                text: 'mirror\'s tired of seeing you',
+                timeAgo: '39m ago',
+                likes: 14
             },
             {
                 _id: '53',
                 author: {
-                    username: 'ronn.print',
+                    username: 'milliecake99',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'same fit or same vibe??',
-                timeAgo: '8:45 PM',
-                likes: 17
-            },
-            {
-                _id: '54',
-                author: {
-                    username: 'val.snap',
-                    profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
-                },
-                text: 'this caption feels familiar 😳',
-                timeAgo: '8:45 PM',
-                likes: 14
+                text: 'same sweater supremacy',
+                timeAgo: '38m ago',
+                likes: 10
             }
         ]
     },
     {
         _id: '19',
         author: {
-            username: 'julesandmilo',
+            username: 'milo_ondeck',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (18).jpg',
@@ -775,39 +625,39 @@ const posts = [
             {
                 _id: '55',
                 author: {
-                    username: 'catlooped',
+                    username: 'noraislost',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'milo\'s in his villain arc',
-                timeAgo: '8:55 PM',
-                likes: 22
+                text: 'he turned his back on us 😔',
+                timeAgo: '37m ago',
+                likes: 15
             },
             {
                 _id: '56',
                 author: {
-                    username: 'em.down',
+                    username: 'ethandrivesalone',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'even the cat is tired',
-                timeAgo: '8:55 PM',
-                likes: 18
+                text: 'he knows things we don\'t',
+                timeAgo: '37m ago',
+                likes: 14
             },
             {
                 _id: '57',
                 author: {
-                    username: 'tash.light',
+                    username: 'catlooped',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'still better content than most of my feed tbh',
-                timeAgo: '8:55 PM',
-                likes: 20
+                text: 'milo said no more content',
+                timeAgo: '37m ago',
+                likes: 18
             }
         ]
     },
     {
         _id: '20',
         author: {
-            username: 'zara.sips',
+            username: 'zara.sipslow',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (19).jpg',
@@ -818,31 +668,21 @@ const posts = [
             {
                 _id: '58',
                 author: {
-                    username: 'jeff.reads',
+                    username: 'lightweekly',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'caption of the month',
-                timeAgo: '9:05 PM',
-                likes: 15
+                text: 'that leftover latte\'s the mood',
+                timeAgo: '33m ago',
+                likes: 16
             },
             {
                 _id: '59',
                 author: {
-                    username: 'naomi.tree',
+                    username: 'michi.loop',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'I\'ve been here too long',
-                timeAgo: '9:05 PM',
-                likes: 19
-            },
-            {
-                _id: '60',
-                author: {
-                    username: 'ben.wav',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'looping irl',
-                timeAgo: '9:05 PM',
+                text: 'quiet booth, loud mind',
+                timeAgo: '33m ago',
                 likes: 11
             }
         ]
@@ -850,7 +690,7 @@ const posts = [
     {
         _id: '21',
         author: {
-            username: 'kevin.jiang',
+            username: 'kfilm.jpeg',
             profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
         },
         image: 'images/Image_fx (20).jpg',
@@ -861,39 +701,29 @@ const posts = [
             {
                 _id: '61',
                 author: {
-                    username: 'samir.23',
+                    username: 'zoe.exe',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'nah this is kind of eerie',
-                timeAgo: '9:15 PM',
-                likes: 17
+                text: 'fogged-out field core',
+                timeAgo: '32m ago',
+                likes: 13
             },
             {
                 _id: '62',
                 author: {
-                    username: 'andrea.flux',
+                    username: 'haley4evaa',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'still pretty but less warm',
-                timeAgo: '9:15 PM',
-                likes: 21
-            },
-            {
-                _id: '63',
-                author: {
-                    username: 'sasha.wind',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'something changed',
-                timeAgo: '9:15 PM',
-                likes: 14
+                text: 'sitting that far apart is a vibe',
+                timeAgo: '32m ago',
+                likes: 10
             }
         ]
     },
     {
         _id: '22',
         author: {
-            username: 'bookish.nora',
+            username: 'noraislost',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (21).jpg',
@@ -904,39 +734,29 @@ const posts = [
             {
                 _id: '64',
                 author: {
-                    username: 'lucas.books',
+                    username: 'rinn.ink',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'me with everything lately tbh',
-                timeAgo: '9:25 PM',
-                likes: 19
+                text: 'same. every book. every time.',
+                timeAgo: '32m ago',
+                likes: 14
             },
             {
                 _id: '65',
                 author: {
-                    username: 'ivy.paper',
+                    username: 'lin2hallway',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'mood but make it aesthetic',
-                timeAgo: '9:25 PM',
-                likes: 22
-            },
-            {
-                _id: '66',
-                author: {
-                    username: 'juliet.calm',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'same book?',
-                timeAgo: '9:25 PM',
-                likes: 11
+                text: 'folded covers always feel like a sigh',
+                timeAgo: '31m ago',
+                likes: 10
             }
         ]
     },
     {
         _id: '23',
         author: {
-            username: 'lin.lockers',
+            username: 'lin2hallway',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (22).jpg',
@@ -947,39 +767,39 @@ const posts = [
             {
                 _id: '67',
                 author: {
-                    username: 'hal.dot',
+                    username: 'lukewastaken',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'every hallway looks the same now',
-                timeAgo: '9:35 PM',
-                likes: 16
+                text: 'feels like a Tuesday that never ended',
+                timeAgo: '29m ago',
+                likes: 12
             },
             {
                 _id: '68',
                 author: {
-                    username: 'oscar.late',
+                    username: 'soph.scraps',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this caption hit harder than expected',
-                timeAgo: '9:35 PM',
-                likes: 21
+                text: 'hallway energy: sterile confusion',
+                timeAgo: '28m ago',
+                likes: 9
             },
             {
                 _id: '69',
                 author: {
-                    username: 'yves.wandering',
+                    username: 'haley4evaa',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'liminal core',
-                timeAgo: '9:35 PM',
-                likes: 12
+                text: 'i think i saw this flyer last year',
+                timeAgo: '28m ago',
+                likes: 14
             }
         ]
     },
     {
         _id: '24',
         author: {
-            username: 'haleygroupchat',
+            username: 'haley4evaa',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (23).jpg',
@@ -990,211 +810,171 @@ const posts = [
             {
                 _id: '70',
                 author: {
-                    username: 'quinn.flynn',
+                    username: 'milliecake99',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'can\'t tell if this was last week or last year',
-                timeAgo: '9:45 PM',
-                likes: 20
+                text: 'blurry pics hit harder tbh',
+                timeAgo: '27m ago',
+                likes: 13
             },
             {
                 _id: '71',
                 author: {
-                    username: 'fran.codes',
+                    username: 'zoe.exe',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'I remember not remembering this',
-                timeAgo: '9:45 PM',
-                likes: 14
+                text: 'mid-blink guy carrying the vibe',
+                timeAgo: '27m ago',
+                likes: 11
             },
             {
                 _id: '72',
                 author: {
-                    username: 'leo.camera',
+                    username: 'kfilm.jpeg',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'same chairs… different energy',
-                timeAgo: '9:45 PM',
-                likes: 18
+                text: 'same chairs, less joy',
+                timeAgo: '27m ago',
+                likes: 12
             }
         ]
     },
     {
         _id: '25',
         author: {
-            username: 'ethan.drives',
+            username: 'ethandrivesalone',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (24).jpg',
         caption: 'still gray',
-        timeAgo: '28m ago',
+        timeAgo: '24m ago',
         likes: 59,
         comments: [
             {
                 _id: '73',
                 author: {
-                    username: 'drip.miles',
+                    username: 'rinn.ink',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'even your sky\'s tired',
-                timeAgo: '9:55 PM',
-                likes: 17
+                text: 'traffic light might be the brightest thing in this',
+                timeAgo: '24m ago',
+                likes: 10
             },
             {
                 _id: '74',
                 author: {
-                    username: 'aria.tires',
+                    username: 'michi.loop',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'love a good grayscale mood',
-                timeAgo: '9:55 PM',
-                likes: 13
-            },
-            {
-                _id: '75',
-                author: {
-                    username: 'nicole.plays',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'copy-paste vibes',
-                timeAgo: '9:55 PM',
-                likes: 15
+                text: 'dashboard looks like it gave up too',
+                timeAgo: '23m ago',
+                likes: 9
             }
         ]
     },
     {
         _id: '26',
         author: {
-            username: 'chef.lee',
+            username: 'kitch.riot',
             profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
         },
         image: 'images/Image_fx (25).jpg',
         caption: 'no mess today',
-        timeAgo: '24m ago',
+        timeAgo: '23m ago',
         likes: 41,
         comments: [
             {
                 _id: '76',
                 author: {
-                    username: 'baker.benji',
+                    username: 'milliecake99',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'where\'s the chaos 😢',
-                timeAgo: '10:05 PM',
-                likes: 9
+                text: 'i miss the flour chaos',
+                timeAgo: '23m ago',
+                likes: 8
             },
             {
                 _id: '77',
                 author: {
-                    username: 'kiki.mess',
+                    username: 'mari.mixes',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this feels off',
-                timeAgo: '10:05 PM',
-                likes: 13
-            },
-            {
-                _id: '78',
-                author: {
-                    username: 'mari.mixes',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'silent sequel to a loud post',
-                timeAgo: '10:05 PM',
-                likes: 11
+                text: 'quiet kitchens scare me a little',
+                timeAgo: '22m ago',
+                likes: 7
             }
         ]
     },
     {
         _id: '27',
         author: {
-            username: 'virtual.zoe',
+            username: 'zoe.exe',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (26).jpg',
         caption: 'everyone\'s tired lately',
-        timeAgo: '23m ago',
+        timeAgo: '21m ago',
         likes: 64,
         comments: [
             {
                 _id: '79',
                 author: {
-                    username: 'lucy.is.online',
+                    username: 'ethandrivesalone',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'zoom fatigue in a screenshot',
-                timeAgo: '10:10 PM',
-                likes: 22
+                text: 'you could hear this image',
+                timeAgo: '21m ago',
+                likes: 12
             },
             {
                 _id: '80',
                 author: {
-                    username: 'trent.muted',
+                    username: 'trentafk',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'where did everyone go?',
-                timeAgo: '10:10 PM',
-                likes: 18
-            },
-            {
-                _id: '81',
-                author: {
-                    username: 'kara.rec',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'same energy in all my classes this week',
-                timeAgo: '10:10 PM',
-                likes: 12
+                text: 'even the guy who walked away knew it',
+                timeAgo: '21m ago',
+                likes: 9
             }
         ]
     },
     {
         _id: '28',
         author: {
-            username: 'light.this.week',
+            username: 'lightweekly',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (27).jpg',
         caption: 'burning through it',
-        timeAgo: '21m ago',
+        timeAgo: '20m ago',
         likes: 50,
         comments: [
             {
                 _id: '82',
                 author: {
-                    username: 'echo.dreamt',
+                    username: 'zara.sipslow',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'this post feels like sunday night',
-                timeAgo: '10:20 PM',
-                likes: 24
+                text: 'i can smell this photo',
+                timeAgo: '20m ago',
+                likes: 10
             },
             {
                 _id: '83',
                 author: {
-                    username: 'nina.ash',
+                    username: 'lin2hallway',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'you okay?',
-                timeAgo: '10:20 PM',
-                likes: 10
-            },
-            {
-                _id: '84',
-                author: {
-                    username: 'tamar.fade',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'this is quiet pain',
-                timeAgo: '10:20 PM',
-                likes: 15
+                text: 'this is what 12:09am feels like',
+                timeAgo: '20m ago',
+                likes: 11
             }
         ]
     },
     {
         _id: '29',
         author: {
-            username: 'amelia.bday',
+            username: 'milliecake99',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (28).jpg',
@@ -1205,39 +985,29 @@ const posts = [
             {
                 _id: '85',
                 author: {
-                    username: 'dev.clock',
+                    username: 'milo_ondeck',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'ouch but yes',
-                timeAgo: '10:30 PM',
-                likes: 19
+                text: 'crumbling cake, crumbling time',
+                timeAgo: '19m ago',
+                likes: 10
             },
             {
                 _id: '86',
                 author: {
-                    username: 'sofi.chews',
+                    username: 'jamiecrumb',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'at least the cake still slaps',
-                timeAgo: '10:30 PM',
-                likes: 14
-            },
-            {
-                _id: '87',
-                author: {
-                    username: 'jamie.crumb',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'same plate, different mood',
-                timeAgo: '10:30 PM',
-                likes: 12
+                text: 'same plate, fewer sprinkles',
+                timeAgo: '19m ago',
+                likes: 8
             }
         ]
     },
     {
         _id: '30',
         author: {
-            username: 'luke.up.there',
+            username: 'lukewastaken',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (29).jpg',
@@ -1248,39 +1018,39 @@ const posts = [
             {
                 _id: '88',
                 author: {
-                    username: 'ella.gone',
+                    username: 'zoe.exe',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'i don\'t believe you anymore',
-                timeAgo: '10:40 PM',
-                likes: 21
+                text: 'caption check: failed',
+                timeAgo: '19m ago',
+                likes: 13
             },
             {
                 _id: '89',
                 author: {
-                    username: 'keith.hollow',
+                    username: 'soph.scraps',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'same post. same caption. different weight.',
-                timeAgo: '10:40 PM',
-                likes: 18
+                text: 'this is the vibe version of that tweet',
+                timeAgo: '19m ago',
+                likes: 11
             },
             {
                 _id: '90',
                 author: {
-                    username: 'mari.down',
+                    username: 'ethandrivesalone',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'come back inside please',
-                timeAgo: '10:40 PM',
-                likes: 14
+                text: 'the sky looks how i feel',
+                timeAgo: '19m ago',
+                likes: 10
             }
         ]
     },
     {
         _id: '31',
         author: {
-            username: 'michelle.l',
+            username: 'michi.loop',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (30).jpg',
@@ -1291,39 +1061,29 @@ const posts = [
             {
                 _id: '91',
                 author: {
-                    username: 'dani.texts',
+                    username: 'fay.blinked',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'wait is this the same pic?',
-                timeAgo: '10:50 PM',
-                likes: 11
+                text: 'how many windows open rn fr',
+                timeAgo: '14m ago',
+                likes: 7
             },
             {
                 _id: '92',
                 author: {
-                    username: 'erica.rows',
+                    username: 'rinn.ink',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'we\'re looping right',
-                timeAgo: '10:50 PM',
-                likes: 8
-            },
-            {
-                _id: '93',
-                author: {
-                    username: 'reid.going',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'i feel weird looking at this',
-                timeAgo: '10:50 PM',
-                likes: 14
+                text: 'i used that same highlighter',
+                timeAgo: '13m ago',
+                likes: 6
             }
         ]
     },
     {
         _id: '32',
         author: {
-            username: 'sophiawrites',
+            username: 'soph.scraps',
             profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
         },
         image: 'images/Image_fx (31).jpg',
@@ -1334,39 +1094,29 @@ const posts = [
             {
                 _id: '94',
                 author: {
-                    username: 'megan.irl',
+                    username: 'milo_ondeck',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'you already posted this',
-                timeAgo: '10:55 PM',
-                likes: 12
+                text: 'sock still winning',
+                timeAgo: '13m ago',
+                likes: 8
             },
             {
                 _id: '95',
                 author: {
-                    username: 'ronn.print',
+                    username: 'jamie.crumb',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'i thought this was from last week',
-                timeAgo: '10:55 PM',
+                text: 'comfort outfit of the year tbh',
+                timeAgo: '12m ago',
                 likes: 9
-            },
-            {
-                _id: '96',
-                author: {
-                    username: 'juli.mirrors',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'what\'s different?',
-                timeAgo: '10:55 PM',
-                likes: 10
             }
         ]
     },
     {
         _id: '33',
         author: {
-            username: 'julesandmilo',
+            username: 'milo_ondeck',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (32).jpg',
@@ -1377,39 +1127,39 @@ const posts = [
             {
                 _id: '97',
                 author: {
-                    username: 'faye.pets',
+                    username: 'kfilm.jpeg',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'this is familiar. again.',
-                timeAgo: '11:05 PM',
-                likes: 11
+                text: 'cat\'s got seniority here',
+                timeAgo: '13m ago',
+                likes: 10
             },
             {
                 _id: '98',
                 author: {
-                    username: 'dan.yawn',
+                    username: 'haley4evaa',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'he\'s tired. i\'m tired.',
-                timeAgo: '11:05 PM',
-                likes: 13
+                text: 'same vibes every post, love him',
+                timeAgo: '12m ago',
+                likes: 9
             },
             {
                 _id: '99',
                 author: {
-                    username: 'mirah.kat',
+                    username: 'catlooped',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'ctrl+c ctrl+v energy',
-                timeAgo: '11:05 PM',
-                likes: 8
+                text: 'my king returns',
+                timeAgo: '12m ago',
+                likes: 12
             }
         ]
     },
     {
         _id: '34',
         author: {
-            username: 'ethan.drives',
+            username: 'ethandrivesalone',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (33).jpg',
@@ -1420,39 +1170,29 @@ const posts = [
             {
                 _id: '100',
                 author: {
-                    username: 'breeee.42',
+                    username: 'zara.sipslow',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'every day is this now huh',
-                timeAgo: '11:15 PM',
-                likes: 10
+                text: 'today, yesterday, tomorrow',
+                timeAgo: '14m ago',
+                likes: 11
             },
             {
                 _id: '101',
                 author: {
-                    username: 'emma.lights',
+                    username: 'cloud.here',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'same weather. same post.',
-                timeAgo: '11:15 PM',
-                likes: 12
-            },
-            {
-                _id: '102',
-                author: {
-                    username: 'no.reply',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'this made me more tired',
-                timeAgo: '11:15 PM',
-                likes: 7
+                text: 'can\'t tell if i\'m moving anymore',
+                timeAgo: '13m ago',
+                likes: 8
             }
         ]
     },
     {
         _id: '35',
         author: {
-            username: 'zara.sips',
+            username: 'zara.sipslow',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (34).jpg',
@@ -1463,39 +1203,29 @@ const posts = [
             {
                 _id: '103',
                 author: {
-                    username: 'ash.still',
+                    username: 'lightweekly',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'i don\'t think they\'re new anymore',
-                timeAgo: '11:25 PM',
-                likes: 14
+                text: 'these are burnt out thoughts',
+                timeAgo: '13m ago',
+                likes: 13
             },
             {
                 _id: '104',
                 author: {
-                    username: 'leo.bench',
+                    username: 'ash.still',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this feels like silence',
-                timeAgo: '11:25 PM',
-                likes: 11
-            },
-            {
-                _id: '105',
-                author: {
-                    username: 'cloud.here',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'why does this make me anxious',
-                timeAgo: '11:25 PM',
-                likes: 6
+                text: 'coffee looks like it gave up',
+                timeAgo: '12m ago',
+                likes: 9
             }
         ]
     },
     {
         _id: '36',
         author: {
-            username: 'lin.lockers',
+            username: 'lin2hallway',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (35).jpg',
@@ -1506,39 +1236,29 @@ const posts = [
             {
                 _id: '106',
                 author: {
-                    username: 'hal.dot',
+                    username: 'soph.scraps',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'this caption\'s been here too long',
-                timeAgo: '11:35 PM',
-                likes: 13
+                text: 'line that goes hard actually',
+                timeAgo: '14m ago',
+                likes: 12
             },
             {
                 _id: '107',
                 author: {
-                    username: 'oscar.late',
+                    username: 'lukewastaken',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'i\'m done scrolling',
-                timeAgo: '11:35 PM',
+                text: 'white noise in photo form',
+                timeAgo: '13m ago',
                 likes: 10
-            },
-            {
-                _id: '108',
-                author: {
-                    username: 'jen.walks',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'same hallway, different nothing',
-                timeAgo: '11:35 PM',
-                likes: 7
             }
         ]
     },
     {
         _id: '37',
         author: {
-            username: 'notes.by.rin',
+            username: 'rinn.ink',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (36).jpg',
@@ -1549,31 +1269,31 @@ const posts = [
             {
                 _id: '109',
                 author: {
-                    username: 'violet.ink',
+                    username: 'michi.loop',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'something\'s off here',
-                timeAgo: '11:45 PM',
+                text: 'been there. still there.',
+                timeAgo: '14m ago',
                 likes: 9
             },
             {
                 _id: '110',
                 author: {
-                    username: 'kira.squares',
+                    username: 'notes404',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'rin are u okay?',
-                timeAgo: '11:45 PM',
-                likes: 11
+                text: 'erase. repeat. erase.',
+                timeAgo: '13m ago',
+                likes: 6
             },
             {
                 _id: '111',
                 author: {
-                    username: 'xavier.notes',
+                    username: 'kira.squares',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'too real to look at',
-                timeAgo: '11:45 PM',
+                text: 'same page different spiral',
+                timeAgo: '13m ago',
                 likes: 5
             }
         ]
@@ -1581,7 +1301,7 @@ const posts = [
     {
         _id: '38',
         author: {
-            username: 'bookish.nora',
+            username: 'noraislost',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (37).jpg',
@@ -1592,31 +1312,21 @@ const posts = [
             {
                 _id: '112',
                 author: {
-                    username: 'amy.reviews',
+                    username: 'zara.sipslow',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'i miss when this meant something',
-                timeAgo: '11:55 PM',
-                likes: 8
+                text: 'this one kinda hurts',
+                timeAgo: '14m ago',
+                likes: 10
             },
             {
                 _id: '113',
                 author: {
-                    username: 'dev.words',
+                    username: 'ivy.paper',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this feels hollow',
-                timeAgo: '11:55 PM',
-                likes: 10
-            },
-            {
-                _id: '114',
-                author: {
-                    username: 'elise.words',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'was this posted already?',
-                timeAgo: '11:55 PM',
+                text: 'what was the book?',
+                timeAgo: '12m ago',
                 likes: 6
             }
         ]
@@ -1624,7 +1334,7 @@ const posts = [
     {
         _id: '39',
         author: {
-            username: 'virtual.zoe',
+            username: 'zoe.exe',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (38).jpg',
@@ -1638,28 +1348,18 @@ const posts = [
                     username: 'cassie.types',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'i thought this ended',
-                timeAgo: '11:55 PM',
-                likes: 8
+                text: 'ghost call energy',
+                timeAgo: '13m ago',
+                likes: 6
             },
             {
                 _id: '116',
                 author: {
-                    username: 'dev.incall',
+                    username: 'marnie.rants',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'why does this hurt?',
-                timeAgo: '11:55 PM',
-                likes: 7
-            },
-            {
-                _id: '117',
-                author: {
-                    username: 'marnie.rants',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'empty boxes talking to no one',
-                timeAgo: '11:55 PM',
+                text: 'even the glitches look tired',
+                timeAgo: '12m ago',
                 likes: 5
             }
         ]
@@ -1667,7 +1367,7 @@ const posts = [
     {
         _id: '40',
         author: {
-            username: 'haleygroupchat',
+            username: 'haley4evaa',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (39).jpg',
@@ -1678,39 +1378,39 @@ const posts = [
             {
                 _id: '118',
                 author: {
-                    username: 'tina.cloud',
+                    username: 'lin2hallway',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'why does this feel like a memory glitch',
-                timeAgo: '12:10 AM',
-                likes: 9
+                text: 'i\'ve walked through this moment before',
+                timeAgo: '14m ago',
+                likes: 7
             },
             {
                 _id: '119',
                 author: {
-                    username: 'jamessays',
+                    username: 'kfilm.jpeg',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'this was posted already??',
-                timeAgo: '12:10 AM',
-                likes: 7
+                text: 'that chair\'s always empty huh',
+                timeAgo: '13m ago',
+                likes: 8
             },
             {
                 _id: '120',
                 author: {
-                    username: 'leo.camera',
+                    username: 'quinn.flynn',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'i\'m the blur in the back',
-                timeAgo: '12:10 AM',
-                likes: 5
+                text: 'i\'m behind the blur',
+                timeAgo: '13m ago',
+                likes: 6
             }
         ]
     },
     {
         _id: '41',
         author: {
-            username: 'light.this.week',
+            username: 'lightweekly',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (40).jpg',
@@ -1721,39 +1421,29 @@ const posts = [
             {
                 _id: '121',
                 author: {
-                    username: 'kai.smokes',
+                    username: 'tamar.fade',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'this one hurt different',
-                timeAgo: '12:20 AM',
-                likes: 11
+                text: 'this one feels final',
+                timeAgo: '13m ago',
+                likes: 8
             },
             {
                 _id: '122',
                 author: {
-                    username: 'elena.dreams',
+                    username: 'zoe.exe',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'i don\'t want this to be real',
-                timeAgo: '12:20 AM',
+                text: 'everything flickers now',
+                timeAgo: '12m ago',
                 likes: 6
-            },
-            {
-                _id: '123',
-                author: {
-                    username: 'ro.ro',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'when the flame goes out then what',
-                timeAgo: '12:20 AM',
-                likes: 5
             }
         ]
     },
     {
         _id: '42',
         author: {
-            username: 'amelia.bday',
+            username: 'milliecake99',
             profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
         },
         image: 'images/Image_fx (41).jpg',
@@ -1764,39 +1454,29 @@ const posts = [
             {
                 _id: '124',
                 author: {
-                    username: 'sofi.chews',
+                    username: 'dev.clock',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'is this the same cake',
-                timeAgo: '12:30 AM',
-                likes: 10
+                text: 'time\'s fake but cake is real',
+                timeAgo: '14m ago',
+                likes: 9
             },
             {
                 _id: '125',
                 author: {
-                    username: 'jamie.crumb',
+                    username: 'sofi.chews',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'i don\'t think i celebrated this time',
-                timeAgo: '12:30 AM',
-                likes: 6
-            },
-            {
-                _id: '126',
-                author: {
-                    username: 'dev.clock',
-                    profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
-                },
-                text: 'this caption is looping',
-                timeAgo: '12:30 AM',
-                likes: 5
+                text: 'this cake\'s seen things',
+                timeAgo: '13m ago',
+                likes: 7
             }
         ]
     },
     {
         _id: '43',
         author: {
-            username: 'chef.lee',
+            username: 'kitch.riot',
             profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
         },
         image: 'images/Image_fx (42).jpg',
@@ -1807,39 +1487,19 @@ const posts = [
             {
                 _id: '127',
                 author: {
-                    username: 'baker.benji',
+                    username: 'mari.mixes',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'what mess??',
-                timeAgo: '12:40 AM',
-                likes: 6
-            },
-            {
-                _id: '128',
-                author: {
-                    username: 'kiki.mess',
-                    profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
-                },
-                text: 'this is a blank post with a caption',
-                timeAgo: '12:40 AM',
-                likes: 8
-            },
-            {
-                _id: '129',
-                author: {
-                    username: 'mari.mixes',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'something\'s not right here',
-                timeAgo: '12:40 AM',
-                likes: 4
+                text: 'the silence is too clean',
+                timeAgo: '14m ago',
+                likes: 7
             }
         ]
     },
     {
         _id: '44',
         author: {
-            username: 'luke.up.there',
+            username: 'lukewastaken',
             profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
         },
         image: 'images/Image_fx (43).jpg',
@@ -1853,28 +1513,28 @@ const posts = [
                     username: 'ella.gone',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'i don\'t believe you anymore',
-                timeAgo: '12:50 AM',
-                likes: 10
+                text: 'i want to believe you',
+                timeAgo: '14m ago',
+                likes: 6
             },
             {
                 _id: '131',
                 author: {
-                    username: 'keith.hollow',
+                    username: 'mari.down',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'same post. same caption. different weight.',
-                timeAgo: '12:50 AM',
+                text: 'something about the laces',
+                timeAgo: '13m ago',
                 likes: 5
             },
             {
                 _id: '132',
                 author: {
-                    username: 'mari.down',
+                    username: 'rinn.ink',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'come back inside please',
-                timeAgo: '12:50 AM',
+                text: 'don\'t stay up there too long',
+                timeAgo: '13m ago',
                 likes: 6
             }
         ]
