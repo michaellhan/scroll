@@ -233,4 +233,12 @@
 
 .ui.comments .comment .content .actions {
   margin-top: 0.5em;
+}
+
+/* Make the last post's image smaller */
+.ui.card:last-child .content .img.post.image img {
+  max-width: 600px;
+  max-height: 600px;
+  margin: 0 auto;
+  display: block;
 } 
