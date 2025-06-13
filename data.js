@@ -15,7 +15,7 @@ const posts = [
         },
         image: 'images/Image_fx.jpg',
         caption: 'study mode ☕📚',
-        timeAgo: '2 hours ago',
+        timeAgo: '7h ago',
         likes: 142,
         comments: [
             {
@@ -25,7 +25,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'the setup is so aesthetic omg',
-                timeAgo: '1 hour ago',
+                timeAgo: '6:48 PM',
                 likes: 22
             },
             {
@@ -35,7 +35,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'is that the same doc from last week lol',
-                timeAgo: '1 hour ago',
+                timeAgo: '6:51 PM',
                 likes: 16
             },
             {
@@ -45,7 +45,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
                 },
                 text: 'this makes me want to be productive',
-                timeAgo: '1 hour ago',
+                timeAgo: '6:53 PM',
                 likes: 34
             }
         ]
@@ -58,7 +58,7 @@ const posts = [
         },
         image: 'images/Image_fx (1).jpg',
         caption: 'golden hour hits different',
-        timeAgo: '3 hours ago',
+        timeAgo: '6h ago',
         likes: 198,
         comments: [
             {
@@ -68,17 +68,17 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
                 text: 'this is giving movie scene',
-                timeAgo: '2 hours ago',
+                timeAgo: '6:55 PM',
                 likes: 45
             },
             {
                 _id: '5',
-        author: {
+                author: {
                     username: 'aaron.loop',
-            profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
-        },
+                    profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
+                },
                 text: 'I miss that day fr',
-                timeAgo: '2 hours ago',
+                timeAgo: '6:57 PM',
                 likes: 29
             },
             {
@@ -88,7 +88,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150'
                 },
                 text: 'can I steal this for my lockscreen',
-                timeAgo: '2 hours ago',
+                timeAgo: '6:59 PM',
                 likes: 38
             }
         ]
@@ -101,7 +101,7 @@ const posts = [
         },
         image: 'images/Image_fx (2).jpg',
         caption: 'fit check I guess',
-        timeAgo: '4 hours ago',
+        timeAgo: '6h ago',
         likes: 104,
         comments: [
             {
@@ -111,7 +111,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'comfy core 🔥',
-                timeAgo: '3 hours ago',
+                timeAgo: '7:03 PM',
                 likes: 12
             },
             {
@@ -121,7 +121,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'mirror is so clean tho??',
-                timeAgo: '3 hours ago',
+                timeAgo: '7:05 PM',
                 likes: 18
             },
             {
@@ -131,7 +131,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
                 },
                 text: 'ur room is so cozy omg',
-                timeAgo: '3 hours ago',
+                timeAgo: '7:07 PM',
                 likes: 25
             }
         ]
@@ -144,7 +144,7 @@ const posts = [
         },
         image: 'images/Image_fx (3).jpg',
         caption: 'made it another year 🎂',
-        timeAgo: '5 hours ago',
+        timeAgo: '5h ago',
         likes: 231,
         comments: [
             {
@@ -154,7 +154,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
                 text: 'happy birthday!!! 🎉',
-                timeAgo: '4 hours ago',
+                timeAgo: '7:10 PM',
                 likes: 52
             },
             {
@@ -164,7 +164,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
                 text: 'save me a piece 👀',
-                timeAgo: '4 hours ago',
+                timeAgo: '7:12 PM',
                 likes: 19
             },
             {
@@ -174,7 +174,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
                 text: 'love that plate lol',
-                timeAgo: '4 hours ago',
+                timeAgo: '7:14 PM',
                 likes: 8
             }
         ]
@@ -187,38 +187,18 @@ const posts = [
         },
         image: 'images/Image_fx (4).jpg',
         caption: 'worth the mess tbh',
-        timeAgo: '6 hours ago',
+        timeAgo: '5h ago',
         likes: 87,
         comments: [
             {
                 _id: '13',
                 author: {
                     username: 'gracieeats',
-            profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
-        },
+                    profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
+                },
                 text: 'this is how you KNOW it\'s gonna be good',
-                timeAgo: '5 hours ago',
-                likes: 33
-            },
-            {
-                _id: '14',
-                author: {
-                    username: 'ben.knives',
-                    profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
-                },
-                text: 'I feel like I can smell this post',
-                timeAgo: '5 hours ago',
-                likes: 11
-            },
-            {
-                _id: '15',
-                author: {
-                    username: 'iris.kat',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
-                },
-                text: 'show the cookies tho 👀',
-                timeAgo: '5 hours ago',
-                likes: 15
+                timeAgo: '7:19 PM',
+                likes: 31
             }
         ]
     },
@@ -230,7 +210,7 @@ const posts = [
         },
         image: 'images/Image_fx (5).jpg',
         caption: 'he owns the place',
-        timeAgo: '7 hours ago',
+        timeAgo: '4h ago',
         likes: 265,
         comments: [
             {
@@ -240,17 +220,17 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
                 text: 'as he should 👑',
-        timeAgo: '6 hours ago',
+                timeAgo: '7:15 PM',
                 likes: 39
-    },
-    {
+            },
+            {
                 _id: '17',
-        author: {
+                author: {
                     username: 'dan.yawn',
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
                 text: 'I want his life fr',
-                timeAgo: '6 hours ago',
+                timeAgo: '7:20 PM',
                 likes: 27
             },
             {
@@ -260,7 +240,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
                 text: 'this is art',
-                timeAgo: '6 hours ago',
+                timeAgo: '7:20 PM',
                 likes: 33
             }
         ]
@@ -273,7 +253,7 @@ const posts = [
         },
         image: 'images/Image_fx (6).jpg',
         caption: 'these ppl >>',
-        timeAgo: '8 hours ago',
+        timeAgo: '4h ago',
         likes: 318,
         comments: [
             {
@@ -283,7 +263,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this day was underrated 🔥',
-                timeAgo: '7 hours ago',
+                timeAgo: '7:30 PM',
                 likes: 26
             },
             {
@@ -293,7 +273,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'I love this group sm',
-                timeAgo: '7 hours ago',
+                timeAgo: '7:30 PM',
                 likes: 34
             },
             {
@@ -303,7 +283,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'tag urself I\'m the one dropping the ice cream',
-                timeAgo: '7 hours ago',
+                timeAgo: '7:30 PM',
                 likes: 41
             }
         ]
@@ -316,7 +296,7 @@ const posts = [
         },
         image: 'images/Image_fx (7).jpg',
         caption: 'idk if this is helping',
-        timeAgo: '9 hours ago',
+        timeAgo: '3h ago',
         likes: 74,
         comments: [
             {
@@ -326,7 +306,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
                 text: 'it looks like a conspiracy theory but I get it',
-                timeAgo: '8 hours ago',
+                timeAgo: '7:40 PM',
                 likes: 17
             },
             {
@@ -336,7 +316,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
                 text: 'this is how my brain looks',
-                timeAgo: '8 hours ago',
+                timeAgo: '7:40 PM',
                 likes: 23
             },
             {
@@ -346,7 +326,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
                 text: 'same layout I used for calc lmao',
-                timeAgo: '8 hours ago',
+                timeAgo: '7:40 PM',
                 likes: 12
             }
         ]
@@ -359,7 +339,7 @@ const posts = [
         },
         image: 'images/Image_fx (8).jpg',
         caption: 'everything\'s kinda gray today',
-        timeAgo: '10 hours ago',
+        timeAgo: '3h ago',
         likes: 91,
         comments: [
             {
@@ -369,7 +349,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this mood is too real',
-                timeAgo: '9 hours ago',
+                timeAgo: '7:45 PM',
                 likes: 30
             },
             {
@@ -379,7 +359,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'feels like the opening to a sad indie movie',
-                timeAgo: '9 hours ago',
+                timeAgo: '7:45 PM',
                 likes: 26
             },
             {
@@ -389,7 +369,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'raincore aesthetic 🌧️',
-                timeAgo: '9 hours ago',
+                timeAgo: '7:45 PM',
                 likes: 18
             }
         ]
@@ -402,7 +382,7 @@ const posts = [
         },
         image: 'images/Image_fx (9).jpg',
         caption: 'same place, new thoughts',
-        timeAgo: '11 hours ago',
+        timeAgo: '2h ago',
         likes: 112,
         comments: [
             {
@@ -412,7 +392,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
                 text: 'this post smells like cinnamon',
-                timeAgo: '10 hours ago',
+                timeAgo: '7:50 PM',
                 likes: 22
             },
             {
@@ -422,7 +402,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
                 text: 'I always think better in cafes too',
-                timeAgo: '10 hours ago',
+                timeAgo: '7:50 PM',
                 likes: 15
             },
             {
@@ -432,7 +412,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
                 text: 'cute mug!!',
-                timeAgo: '10 hours ago',
+                timeAgo: '7:50 PM',
                 likes: 12
             }
         ]
@@ -445,7 +425,7 @@ const posts = [
         },
         image: 'images/Image_fx (10).jpg',
         caption: 'forgot I liked reading',
-        timeAgo: '12 hours ago',
+        timeAgo: '2h ago',
         likes: 126,
         comments: [
             {
@@ -455,7 +435,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this hits',
-                timeAgo: '11 hours ago',
+                timeAgo: '7:55 PM',
                 likes: 14
             },
             {
@@ -465,7 +445,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'what book tho 👀',
-                timeAgo: '11 hours ago',
+                timeAgo: '7:55 PM',
                 likes: 19
             },
             {
@@ -475,7 +455,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'you always pick the prettiest lighting',
-                timeAgo: '11 hours ago',
+                timeAgo: '7:55 PM',
                 likes: 21
             }
         ]
@@ -488,7 +468,7 @@ const posts = [
         },
         image: 'images/Image_fx (11).jpg',
         caption: 'don\'t worry, I\'m fine',
-        timeAgo: '13 hours ago',
+        timeAgo: '1h ago',
         likes: 97,
         comments: [
             {
@@ -498,7 +478,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
                 text: 'same caption as my inner voice',
-                timeAgo: '12 hours ago',
+                timeAgo: '7:55 PM',
                 likes: 28
             },
             {
@@ -508,7 +488,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
                 text: 'the lighting is oddly perfect for this',
-                timeAgo: '12 hours ago',
+                timeAgo: '7:55 PM',
                 likes: 14
             },
             {
@@ -518,7 +498,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
                 text: 'this post is a vibe and a cry for help',
-                timeAgo: '12 hours ago',
+                timeAgo: '7:55 PM',
                 likes: 31
             }
         ]
@@ -531,7 +511,7 @@ const posts = [
         },
         image: 'images/Image_fx (12).jpg',
         caption: 'almost like real life lol',
-        timeAgo: '14 hours ago',
+        timeAgo: '1h ago',
         likes: 134,
         comments: [
             {
@@ -541,7 +521,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'honestly miss this chaos',
-                timeAgo: '13 hours ago',
+                timeAgo: '8:05 PM',
                 likes: 23
             },
             {
@@ -551,7 +531,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'I\'m the square that\'s frozen 😭',
-                timeAgo: '13 hours ago',
+                timeAgo: '8:05 PM',
                 likes: 18
             },
             {
@@ -561,7 +541,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'remember the quizlet tab tho 💀',
-                timeAgo: '13 hours ago',
+                timeAgo: '8:05 PM',
                 likes: 33
             }
         ]
@@ -574,7 +554,7 @@ const posts = [
         },
         image: 'images/Image_fx (13).jpg',
         caption: 'peaceful moment',
-        timeAgo: '15 hours ago',
+        timeAgo: '1h ago',
         likes: 83,
         comments: [
             {
@@ -584,7 +564,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
                 text: 'you post like a poem',
-                timeAgo: '14 hours ago',
+                timeAgo: '8:10 PM',
                 likes: 25
             },
             {
@@ -594,7 +574,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
                 text: 'I needed this today',
-                timeAgo: '14 hours ago',
+                timeAgo: '8:10 PM',
                 likes: 21
             },
             {
@@ -604,7 +584,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
                 text: 'I want to live in this frame',
-                timeAgo: '14 hours ago',
+                timeAgo: '8:10 PM',
                 likes: 19
             }
         ]
@@ -617,7 +597,7 @@ const posts = [
         },
         image: 'images/Image_fx (14).jpg',
         caption: 'we live here more than we live at home',
-        timeAgo: '16 hours ago',
+        timeAgo: '1h ago',
         likes: 109,
         comments: [
             {
@@ -627,7 +607,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'ugh this is too real',
-                timeAgo: '15 hours ago',
+                timeAgo: '8:20 PM',
                 likes: 27
             },
             {
@@ -637,7 +617,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'caption of the semester',
-                timeAgo: '15 hours ago',
+                timeAgo: '8:20 PM',
                 likes: 31
             },
             {
@@ -647,7 +627,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'I know this exact hallway smell',
-                timeAgo: '15 hours ago',
+                timeAgo: '8:20 PM',
                 likes: 15
             }
         ]
@@ -660,7 +640,7 @@ const posts = [
         },
         image: 'images/Image_fx (15).jpg',
         caption: 'I don\'t even remember writing this',
-        timeAgo: '17 hours ago',
+        timeAgo: '47m ago',
         likes: 58,
         comments: [
             {
@@ -670,7 +650,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'that corner\'s kinda deep ngl',
-                timeAgo: '16 hours ago',
+                timeAgo: '8:25 PM',
                 likes: 14
             },
             {
@@ -680,7 +660,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'same handwriting as my dream journal',
-                timeAgo: '16 hours ago',
+                timeAgo: '8:25 PM',
                 likes: 7
             },
             {
@@ -690,7 +670,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'I feel like I\'ve seen this before??',
-                timeAgo: '16 hours ago',
+                timeAgo: '8:25 PM',
                 likes: 19
             }
         ]
@@ -703,7 +683,7 @@ const posts = [
         },
         image: 'images/Image_fx (16).jpg',
         caption: 'still here ☕📚',
-        timeAgo: '18 hours ago',
+        timeAgo: '43m ago',
         likes: 81,
         comments: [
             {
@@ -713,7 +693,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150'
                 },
                 text: 'you\'re in the same spot lol',
-                timeAgo: '17 hours ago',
+                timeAgo: '8:35 PM',
                 likes: 11
             },
             {
@@ -723,7 +703,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
                 },
                 text: 'I respect the grind (and the plant)',
-                timeAgo: '17 hours ago',
+                timeAgo: '8:35 PM',
                 likes: 16
             },
             {
@@ -733,7 +713,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
                 },
                 text: 'study loop engaged',
-                timeAgo: '17 hours ago',
+                timeAgo: '8:35 PM',
                 likes: 9
             }
         ]
@@ -746,7 +726,7 @@ const posts = [
         },
         image: 'images/Image_fx (17).jpg',
         caption: 'fit check again I guess',
-        timeAgo: '19 hours ago',
+        timeAgo: '39m ago',
         likes: 92,
         comments: [
             {
@@ -756,7 +736,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'this one\'s giving tired but cute',
-                timeAgo: '18 hours ago',
+                timeAgo: '8:45 PM',
                 likes: 12
             },
             {
@@ -766,7 +746,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'same fit or same vibe??',
-                timeAgo: '18 hours ago',
+                timeAgo: '8:45 PM',
                 likes: 17
             },
             {
@@ -776,7 +756,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
                 },
                 text: 'this caption feels familiar 😳',
-                timeAgo: '18 hours ago',
+                timeAgo: '8:45 PM',
                 likes: 14
             }
         ]
@@ -789,7 +769,7 @@ const posts = [
         },
         image: 'images/Image_fx (18).jpg',
         caption: 'he\'s over it',
-        timeAgo: '20 hours ago',
+        timeAgo: '38m ago',
         likes: 103,
         comments: [
             {
@@ -799,7 +779,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'milo\'s in his villain arc',
-                timeAgo: '19 hours ago',
+                timeAgo: '8:55 PM',
                 likes: 22
             },
             {
@@ -809,7 +789,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'even the cat is tired',
-                timeAgo: '19 hours ago',
+                timeAgo: '8:55 PM',
                 likes: 18
             },
             {
@@ -819,7 +799,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'still better content than most of my feed tbh',
-                timeAgo: '19 hours ago',
+                timeAgo: '8:55 PM',
                 likes: 20
             }
         ]
@@ -832,7 +812,7 @@ const posts = [
         },
         image: 'images/Image_fx (19).jpg',
         caption: 'same place, same thoughts',
-        timeAgo: '21 hours ago',
+        timeAgo: '34m ago',
         likes: 77,
         comments: [
             {
@@ -842,7 +822,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'caption of the month',
-                timeAgo: '20 hours ago',
+                timeAgo: '9:05 PM',
                 likes: 15
             },
             {
@@ -852,7 +832,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'I\'ve been here too long',
-                timeAgo: '20 hours ago',
+                timeAgo: '9:05 PM',
                 likes: 19
             },
             {
@@ -862,7 +842,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'looping irl',
-                timeAgo: '20 hours ago',
+                timeAgo: '9:05 PM',
                 likes: 11
             }
         ]
@@ -875,7 +855,7 @@ const posts = [
         },
         image: 'images/Image_fx (20).jpg',
         caption: 'maybe it\'s not hitting the same',
-        timeAgo: '22 hours ago',
+        timeAgo: '33m ago',
         likes: 88,
         comments: [
             {
@@ -885,7 +865,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'nah this is kind of eerie',
-                timeAgo: '21 hours ago',
+                timeAgo: '9:15 PM',
                 likes: 17
             },
             {
@@ -895,7 +875,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'still pretty but less warm',
-                timeAgo: '21 hours ago',
+                timeAgo: '9:15 PM',
                 likes: 21
             },
             {
@@ -905,7 +885,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'something changed',
-                timeAgo: '21 hours ago',
+                timeAgo: '9:15 PM',
                 likes: 14
             }
         ]
@@ -918,7 +898,7 @@ const posts = [
         },
         image: 'images/Image_fx (21).jpg',
         caption: 'I didn\'t finish it',
-        timeAgo: '23 hours ago',
+        timeAgo: '33m ago',
         likes: 72,
         comments: [
             {
@@ -928,7 +908,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'me with everything lately tbh',
-                timeAgo: '22 hours ago',
+                timeAgo: '9:25 PM',
                 likes: 19
             },
             {
@@ -938,7 +918,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'mood but make it aesthetic',
-                timeAgo: '22 hours ago',
+                timeAgo: '9:25 PM',
                 likes: 22
             },
             {
@@ -948,7 +928,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'same book?',
-                timeAgo: '22 hours ago',
+                timeAgo: '9:25 PM',
                 likes: 11
             }
         ]
@@ -961,7 +941,7 @@ const posts = [
         },
         image: 'images/Image_fx (22).jpg',
         caption: 'I forget what day this was',
-        timeAgo: '24 hours ago',
+        timeAgo: '29m ago',
         likes: 66,
         comments: [
             {
@@ -971,7 +951,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'every hallway looks the same now',
-                timeAgo: '23 hours ago',
+                timeAgo: '9:35 PM',
                 likes: 16
             },
             {
@@ -981,7 +961,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this caption hit harder than expected',
-                timeAgo: '23 hours ago',
+                timeAgo: '9:35 PM',
                 likes: 21
             },
             {
@@ -991,7 +971,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'liminal core',
-                timeAgo: '23 hours ago',
+                timeAgo: '9:35 PM',
                 likes: 12
             }
         ]
@@ -1004,7 +984,7 @@ const posts = [
         },
         image: 'images/Image_fx (23).jpg',
         caption: 'this was fun I think?',
-        timeAgo: '25 hours ago',
+        timeAgo: '28m ago',
         likes: 119,
         comments: [
             {
@@ -1014,7 +994,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'can\'t tell if this was last week or last year',
-                timeAgo: '24 hours ago',
+                timeAgo: '9:45 PM',
                 likes: 20
             },
             {
@@ -1024,7 +1004,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'I remember not remembering this',
-                timeAgo: '24 hours ago',
+                timeAgo: '9:45 PM',
                 likes: 14
             },
             {
@@ -1034,7 +1014,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'same chairs… different energy',
-                timeAgo: '24 hours ago',
+                timeAgo: '9:45 PM',
                 likes: 18
             }
         ]
@@ -1047,7 +1027,7 @@ const posts = [
         },
         image: 'images/Image_fx (24).jpg',
         caption: 'still gray',
-        timeAgo: '26 hours ago',
+        timeAgo: '28m ago',
         likes: 59,
         comments: [
             {
@@ -1057,7 +1037,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'even your sky\'s tired',
-                timeAgo: '25 hours ago',
+                timeAgo: '9:55 PM',
                 likes: 17
             },
             {
@@ -1067,7 +1047,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'love a good grayscale mood',
-                timeAgo: '25 hours ago',
+                timeAgo: '9:55 PM',
                 likes: 13
             },
             {
@@ -1077,7 +1057,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'copy-paste vibes',
-                timeAgo: '25 hours ago',
+                timeAgo: '9:55 PM',
                 likes: 15
             }
         ]
@@ -1090,7 +1070,7 @@ const posts = [
         },
         image: 'images/Image_fx (25).jpg',
         caption: 'no mess today',
-        timeAgo: '27 hours ago',
+        timeAgo: '24m ago',
         likes: 41,
         comments: [
             {
@@ -1100,7 +1080,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'where\'s the chaos 😢',
-                timeAgo: '26 hours ago',
+                timeAgo: '10:05 PM',
                 likes: 9
             },
             {
@@ -1110,7 +1090,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this feels off',
-                timeAgo: '26 hours ago',
+                timeAgo: '10:05 PM',
                 likes: 13
             },
             {
@@ -1120,7 +1100,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'silent sequel to a loud post',
-                timeAgo: '26 hours ago',
+                timeAgo: '10:05 PM',
                 likes: 11
             }
         ]
@@ -1133,7 +1113,7 @@ const posts = [
         },
         image: 'images/Image_fx (26).jpg',
         caption: 'everyone\'s tired lately',
-        timeAgo: '28 hours ago',
+        timeAgo: '23m ago',
         likes: 64,
         comments: [
             {
@@ -1143,7 +1123,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'zoom fatigue in a screenshot',
-                timeAgo: '27 hours ago',
+                timeAgo: '10:10 PM',
                 likes: 22
             },
             {
@@ -1153,7 +1133,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'where did everyone go?',
-                timeAgo: '27 hours ago',
+                timeAgo: '10:10 PM',
                 likes: 18
             },
             {
@@ -1162,8 +1142,8 @@ const posts = [
                     username: 'kara.rec',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'even the boxes feel lonely',
-                timeAgo: '27 hours ago',
+                text: 'same energy in all my classes this week',
+                timeAgo: '10:10 PM',
                 likes: 12
             }
         ]
@@ -1176,7 +1156,7 @@ const posts = [
         },
         image: 'images/Image_fx (27).jpg',
         caption: 'burning through it',
-        timeAgo: '29 hours ago',
+        timeAgo: '21m ago',
         likes: 50,
         comments: [
             {
@@ -1186,7 +1166,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'this post feels like sunday night',
-                timeAgo: '28 hours ago',
+                timeAgo: '10:20 PM',
                 likes: 24
             },
             {
@@ -1196,7 +1176,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'you okay?',
-                timeAgo: '28 hours ago',
+                timeAgo: '10:20 PM',
                 likes: 10
             },
             {
@@ -1206,7 +1186,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'this is quiet pain',
-                timeAgo: '28 hours ago',
+                timeAgo: '10:20 PM',
                 likes: 15
             }
         ]
@@ -1219,7 +1199,7 @@ const posts = [
         },
         image: 'images/Image_fx (28).jpg',
         caption: 'another year gone already',
-        timeAgo: '30 hours ago',
+        timeAgo: '20m ago',
         likes: 76,
         comments: [
             {
@@ -1229,7 +1209,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'ouch but yes',
-                timeAgo: '29 hours ago',
+                timeAgo: '10:30 PM',
                 likes: 19
             },
             {
@@ -1239,7 +1219,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'at least the cake still slaps',
-                timeAgo: '29 hours ago',
+                timeAgo: '10:30 PM',
                 likes: 14
             },
             {
@@ -1249,7 +1229,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'same plate, different mood',
-                timeAgo: '29 hours ago',
+                timeAgo: '10:30 PM',
                 likes: 12
             }
         ]
@@ -1262,7 +1242,7 @@ const posts = [
         },
         image: 'images/Image_fx (29).jpg',
         caption: 'don\'t worry, I\'m fine',
-        timeAgo: '31 hours ago',
+        timeAgo: '20m ago',
         likes: 44,
         comments: [
             {
@@ -1271,8 +1251,8 @@ const posts = [
                     username: 'ella.gone',
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
-                text: 'this is looping now right?',
-                timeAgo: '30 hours ago',
+                text: 'i don\'t believe you anymore',
+                timeAgo: '10:40 PM',
                 likes: 21
             },
             {
@@ -1281,8 +1261,8 @@ const posts = [
                     username: 'keith.hollow',
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
-                text: 'caption\'s still lying',
-                timeAgo: '30 hours ago',
+                text: 'same post. same caption. different weight.',
+                timeAgo: '10:40 PM',
                 likes: 18
             },
             {
@@ -1291,8 +1271,8 @@ const posts = [
                     username: 'mari.down',
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
-                text: 'you okay up there?',
-                timeAgo: '30 hours ago',
+                text: 'come back inside please',
+                timeAgo: '10:40 PM',
                 likes: 14
             }
         ]
@@ -1305,7 +1285,7 @@ const posts = [
         },
         image: 'images/Image_fx (30).jpg',
         caption: 'study mode ☕📚',
-        timeAgo: '32 hours ago',
+        timeAgo: '15m ago',
         likes: 42,
         comments: [
             {
@@ -1315,7 +1295,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'wait is this the same pic?',
-                timeAgo: '31 hours ago',
+                timeAgo: '10:50 PM',
                 likes: 11
             },
             {
@@ -1325,7 +1305,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'we\'re looping right',
-                timeAgo: '31 hours ago',
+                timeAgo: '10:50 PM',
                 likes: 8
             },
             {
@@ -1335,7 +1315,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'i feel weird looking at this',
-                timeAgo: '31 hours ago',
+                timeAgo: '10:50 PM',
                 likes: 14
             }
         ]
@@ -1348,7 +1328,7 @@ const posts = [
         },
         image: 'images/Image_fx (31).jpg',
         caption: 'fit check I guess',
-        timeAgo: '33 hours ago',
+        timeAgo: '15m ago',
         likes: 39,
         comments: [
             {
@@ -1358,7 +1338,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'you already posted this',
-                timeAgo: '32 hours ago',
+                timeAgo: '10:55 PM',
                 likes: 12
             },
             {
@@ -1368,7 +1348,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'i thought this was from last week',
-                timeAgo: '32 hours ago',
+                timeAgo: '10:55 PM',
                 likes: 9
             },
             {
@@ -1378,7 +1358,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'what\'s different?',
-                timeAgo: '32 hours ago',
+                timeAgo: '10:55 PM',
                 likes: 10
             }
         ]
@@ -1391,7 +1371,7 @@ const posts = [
         },
         image: 'images/Image_fx (32).jpg',
         caption: 'he owns the place',
-        timeAgo: '34 hours ago',
+        timeAgo: '15m ago',
         likes: 40,
         comments: [
             {
@@ -1401,7 +1381,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'this is familiar. again.',
-                timeAgo: '33 hours ago',
+                timeAgo: '11:05 PM',
                 likes: 11
             },
             {
@@ -1411,7 +1391,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'he\'s tired. i\'m tired.',
-                timeAgo: '33 hours ago',
+                timeAgo: '11:05 PM',
                 likes: 13
             },
             {
@@ -1421,7 +1401,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'ctrl+c ctrl+v energy',
-                timeAgo: '33 hours ago',
+                timeAgo: '11:05 PM',
                 likes: 8
             }
         ]
@@ -1434,7 +1414,7 @@ const posts = [
         },
         image: 'images/Image_fx (33).jpg',
         caption: 'gray again',
-        timeAgo: '35 hours ago',
+        timeAgo: '15m ago',
         likes: 27,
         comments: [
             {
@@ -1444,7 +1424,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'every day is this now huh',
-                timeAgo: '34 hours ago',
+                timeAgo: '11:15 PM',
                 likes: 10
             },
             {
@@ -1454,7 +1434,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'same weather. same post.',
-                timeAgo: '34 hours ago',
+                timeAgo: '11:15 PM',
                 likes: 12
             },
             {
@@ -1464,7 +1444,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'this made me more tired',
-                timeAgo: '34 hours ago',
+                timeAgo: '11:15 PM',
                 likes: 7
             }
         ]
@@ -1477,7 +1457,7 @@ const posts = [
         },
         image: 'images/Image_fx (34).jpg',
         caption: 'new thoughts',
-        timeAgo: '36 hours ago',
+        timeAgo: '15m ago',
         likes: 35,
         comments: [
             {
@@ -1487,7 +1467,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'i don\'t think they\'re new anymore',
-                timeAgo: '35 hours ago',
+                timeAgo: '11:25 PM',
                 likes: 14
             },
             {
@@ -1497,7 +1477,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this feels like silence',
-                timeAgo: '35 hours ago',
+                timeAgo: '11:25 PM',
                 likes: 11
             },
             {
@@ -1507,7 +1487,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'why does this make me anxious',
-                timeAgo: '35 hours ago',
+                timeAgo: '11:25 PM',
                 likes: 6
             }
         ]
@@ -1520,7 +1500,7 @@ const posts = [
         },
         image: 'images/Image_fx (35).jpg',
         caption: 'we live here more than we live at home',
-        timeAgo: '37 hours ago',
+        timeAgo: '15m ago',
         likes: 29,
         comments: [
             {
@@ -1530,7 +1510,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'this caption\'s been here too long',
-                timeAgo: '36 hours ago',
+                timeAgo: '11:35 PM',
                 likes: 13
             },
             {
@@ -1540,7 +1520,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'i\'m done scrolling',
-                timeAgo: '36 hours ago',
+                timeAgo: '11:35 PM',
                 likes: 10
             },
             {
@@ -1550,7 +1530,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'same hallway, different nothing',
-                timeAgo: '36 hours ago',
+                timeAgo: '11:35 PM',
                 likes: 7
             }
         ]
@@ -1563,7 +1543,7 @@ const posts = [
         },
         image: 'images/Image_fx (36).jpg',
         caption: 'idk if this is helping',
-        timeAgo: '38 hours ago',
+        timeAgo: '15m ago',
         likes: 21,
         comments: [
             {
@@ -1573,7 +1553,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'something\'s off here',
-                timeAgo: '37 hours ago',
+                timeAgo: '11:45 PM',
                 likes: 9
             },
             {
@@ -1583,7 +1563,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'rin are u okay?',
-                timeAgo: '37 hours ago',
+                timeAgo: '11:45 PM',
                 likes: 11
             },
             {
@@ -1593,7 +1573,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'too real to look at',
-                timeAgo: '37 hours ago',
+                timeAgo: '11:45 PM',
                 likes: 5
             }
         ]
@@ -1606,7 +1586,7 @@ const posts = [
         },
         image: 'images/Image_fx (37).jpg',
         caption: 'forgot I liked reading',
-        timeAgo: '39 hours ago',
+        timeAgo: '15m ago',
         likes: 33,
         comments: [
             {
@@ -1616,7 +1596,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'i miss when this meant something',
-                timeAgo: '38 hours ago',
+                timeAgo: '11:55 PM',
                 likes: 8
             },
             {
@@ -1626,7 +1606,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this feels hollow',
-                timeAgo: '38 hours ago',
+                timeAgo: '11:55 PM',
                 likes: 10
             },
             {
@@ -1636,7 +1616,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'was this posted already?',
-                timeAgo: '38 hours ago',
+                timeAgo: '11:55 PM',
                 likes: 6
             }
         ]
@@ -1649,7 +1629,7 @@ const posts = [
         },
         image: 'images/Image_fx (38).jpg',
         caption: 'still here',
-        timeAgo: '40 hours ago',
+        timeAgo: '15m ago',
         likes: 18,
         comments: [
             {
@@ -1659,7 +1639,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'i thought this ended',
-                timeAgo: '39 hours ago',
+                timeAgo: '11:55 PM',
                 likes: 8
             },
             {
@@ -1669,7 +1649,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'why does this hurt?',
-                timeAgo: '39 hours ago',
+                timeAgo: '11:55 PM',
                 likes: 7
             },
             {
@@ -1679,7 +1659,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'empty boxes talking to no one',
-                timeAgo: '39 hours ago',
+                timeAgo: '11:55 PM',
                 likes: 5
             }
         ]
@@ -1692,7 +1672,7 @@ const posts = [
         },
         image: 'images/Image_fx (39).jpg',
         caption: 'these ppl >>',
-        timeAgo: '41 hours ago',
+        timeAgo: '15m ago',
         likes: 24,
         comments: [
             {
@@ -1702,7 +1682,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'why does this feel like a memory glitch',
-                timeAgo: '40 hours ago',
+                timeAgo: '12:10 AM',
                 likes: 9
             },
             {
@@ -1712,7 +1692,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this was posted already??',
-                timeAgo: '40 hours ago',
+                timeAgo: '12:10 AM',
                 likes: 7
             },
             {
@@ -1722,7 +1702,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'i\'m the blur in the back',
-                timeAgo: '40 hours ago',
+                timeAgo: '12:10 AM',
                 likes: 5
             }
         ]
@@ -1735,7 +1715,7 @@ const posts = [
         },
         image: 'images/Image_fx (40).jpg',
         caption: 'almost gone',
-        timeAgo: '42 hours ago',
+        timeAgo: '15m ago',
         likes: 22,
         comments: [
             {
@@ -1745,7 +1725,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'this one hurt different',
-                timeAgo: '41 hours ago',
+                timeAgo: '12:20 AM',
                 likes: 11
             },
             {
@@ -1755,7 +1735,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'i don\'t want this to be real',
-                timeAgo: '41 hours ago',
+                timeAgo: '12:20 AM',
                 likes: 6
             },
             {
@@ -1765,7 +1745,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'when the flame goes out then what',
-                timeAgo: '41 hours ago',
+                timeAgo: '12:20 AM',
                 likes: 5
             }
         ]
@@ -1778,7 +1758,7 @@ const posts = [
         },
         image: 'images/Image_fx (41).jpg',
         caption: 'made it another year 🎂',
-        timeAgo: '43 hours ago',
+        timeAgo: '15m ago',
         likes: 28,
         comments: [
             {
@@ -1788,7 +1768,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'is this the same cake',
-                timeAgo: '42 hours ago',
+                timeAgo: '12:30 AM',
                 likes: 10
             },
             {
@@ -1798,17 +1778,17 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'i don\'t think i celebrated this time',
-                timeAgo: '42 hours ago',
+                timeAgo: '12:30 AM',
                 likes: 6
             },
             {
                 _id: '126',
                 author: {
                     username: 'dev.clock',
-                    profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
+                    profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'this caption is looping',
-                timeAgo: '42 hours ago',
+                timeAgo: '12:30 AM',
                 likes: 5
             }
         ]
@@ -1821,7 +1801,7 @@ const posts = [
         },
         image: 'images/Image_fx (42).jpg',
         caption: 'worth the mess tbh',
-        timeAgo: '44 hours ago',
+        timeAgo: '15m ago',
         likes: 19,
         comments: [
             {
@@ -1831,7 +1811,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'what mess??',
-                timeAgo: '43 hours ago',
+                timeAgo: '12:40 AM',
                 likes: 6
             },
             {
@@ -1841,7 +1821,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'this is a blank post with a caption',
-                timeAgo: '43 hours ago',
+                timeAgo: '12:40 AM',
                 likes: 8
             },
             {
@@ -1851,7 +1831,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'something\'s not right here',
-                timeAgo: '43 hours ago',
+                timeAgo: '12:40 AM',
                 likes: 4
             }
         ]
@@ -1864,7 +1844,7 @@ const posts = [
         },
         image: 'images/Image_fx (43).jpg',
         caption: 'don\'t worry, I\'m fine',
-        timeAgo: '45 hours ago',
+        timeAgo: '15m ago',
         likes: 17,
         comments: [
             {
@@ -1874,7 +1854,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150'
                 },
                 text: 'i don\'t believe you anymore',
-                timeAgo: '44 hours ago',
+                timeAgo: '12:50 AM',
                 likes: 10
             },
             {
@@ -1884,7 +1864,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'
                 },
                 text: 'same post. same caption. different weight.',
-                timeAgo: '44 hours ago',
+                timeAgo: '12:50 AM',
                 likes: 5
             },
             {
@@ -1894,7 +1874,7 @@ const posts = [
                     profilePic: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
                 },
                 text: 'come back inside please',
-                timeAgo: '44 hours ago',
+                timeAgo: '12:50 AM',
                 likes: 6
             }
         ]
@@ -1907,7 +1887,7 @@ const posts = [
         },
         image: 'images/Image_fx (44).jpg',
         caption: '',
-        timeAgo: '46 hours ago',
+        timeAgo: '',
         likes: 0,
         comments: []
     }
