@@ -16,6 +16,19 @@
     <script src="main.js"></script>
 </head>
 <body class="dimmable">
+    <!-- Artist Statement Modal -->
+    <div class="ui modal" id="artistStatementModal">
+        <div class="header">About scroll.</div>
+        <div class="content">
+            <p>scroll. is an interactive art piece that explores the nature of social media consumption and its impact on our emotional well-being.</p>
+            <p>As you scroll through this feed, you'll notice a gradual shift in content—from engaging and meaningful posts to increasingly empty and repetitive content. This mirrors the experience many of us have on social media platforms, where the initial dopamine hits of interesting content give way to endless scrolling through increasingly hollow material.</p>
+            <p>The piece invites you to reflect on your own social media habits and the emotional journey of digital consumption. When was the last time you scrolled mindlessly through your feed? How did it make you feel? And most importantly, what are you really looking for?</p>
+        </div>
+        <div class="actions">
+            <div class="ui button">Close</div>
+        </div>
+    </div>
+
     <div class="ui container" style="padding-top: 2em;">
         <h1 style="font-size: 2.5em; font-weight: 200; color: #333; text-align: center; margin-bottom: 0.2em;">scroll.</h1>
         <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 2em;">
@@ -31,6 +44,13 @@
 
             <div class="sixteen wide column" id="content" style="display: block;">
                 <!-- Posts will be dynamically inserted here -->
+            </div>
+
+            <!-- What Was This Button -->
+            <div class="sixteen wide column" id="whatWasThisContainer" style="text-align: center; margin-top: 2em; opacity: 0; transition: opacity 0.5s ease-in-out;">
+                <button class="ui basic button" id="whatWasThisButton" style="color: #666; font-size: 1.1em;">
+                    what was this?
+                </button>
             </div>
 
             <div class="sixteen wide column" id="loading" style="display: none;">

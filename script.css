@@ -241,4 +241,66 @@
   max-height: 600px;
   margin: 0 auto;
   display: block;
+}
+
+/* Modal Styles */
+.ui.modal {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ui.modal .header {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #333;
+    padding: 1.5em 1.5em 0.5em;
+}
+
+.ui.modal .content {
+    padding: 1.5em;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666;
+}
+
+.ui.modal .actions {
+    padding: 1em 1.5em 1.5em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ui.modal .button {
+    background-color: #4DA5F4;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.ui.modal .button:hover {
+    background-color: #3d8fd6;
+}
+
+/* What Was This Button Styles */
+#whatWasThisContainer {
+    text-align: center;
+    margin-top: 2em;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Disable pointer events when hidden */
+}
+
+#whatWasThisContainer.visible {
+    pointer-events: auto; /* Enable pointer events when visible */
+}
+
+#whatWasThisButton {
+    color: #666 !important;
+    font-size: 1.1em !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5em 1em !important;
+    cursor: pointer !important;
+    transition: color 0.2s ease !important;
+}
+
+#whatWasThisButton:hover {
+    color: #4DA5F4 !important;
 } 

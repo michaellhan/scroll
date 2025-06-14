@@ -301,4 +301,43 @@ $(document).ready(function() {
 
     // Initialize the page
     initializePosts();
+
+    // Add this near the end of the file, before any closing brackets
+    function checkScrollForWhatWasThis() {
+        const content = document.getElementById('content');
+        const whatWasThisContainer = document.getElementById('whatWasThisContainer');
+        
+        if (!content || !whatWasThisContainer) return;
+        
+        const contentBottom = content.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+        
+        // If the bottom of the content is visible in the viewport
+        if (contentBottom <= windowHeight) {
+            // Add a 5 second delay before showing the button
+            setTimeout(() => {
+                whatWasThisContainer.style.opacity = '1';
+                whatWasThisContainer.classList.add('visible');
+            }, 5000);
+        } else {
+            whatWasThisContainer.style.opacity = '0';
+            whatWasThisContainer.classList.remove('visible');
+        }
+    }
+
+    // Add click handler for the "what was this?" button
+    $('#whatWasThisButton').click(function() {
+        $('#artistStatementModal').modal('show');
+    });
+
+    // Add click handler for the modal's close button
+    $('.ui.modal .button').click(function() {
+        $('#artistStatementModal').modal('hide');
+    });
+
+    // Add scroll event listener
+    window.addEventListener('scroll', checkScrollForWhatWasThis);
+
+    // Initial check
+    checkScrollForWhatWasThis();
 });
