@@ -1,20 +1,110 @@
 $(document).ready(function() {
-    // Initialize posts
+    // Configuration
+    const POSTS_PER_BATCH = 5;
+    let currentBatch = 0;
+    let isLoading = false;
+    let allPostsLoaded = false;
+
+    // Create skeleton post HTML
+    function createSkeletonPostHtml() {
+        return `
+            <div class="ui fluid card skeleton-card">
+                <div class="content">
+                    <div class="skeleton-header">
+                        <div class="skeleton skeleton-avatar"></div>
+                        <div class="skeleton-header-content">
+                            <div class="skeleton skeleton-text short"></div>
+                            <div class="skeleton skeleton-text medium"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-text medium"></div>
+                    <div class="skeleton skeleton-text short"></div>
+                </div>
+                <div class="ui bottom three attached icon buttons">
+                    <div class="skeleton skeleton-button"></div>
+                    <div class="skeleton skeleton-button"></div>
+                    <div class="skeleton skeleton-button"></div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Preload image
+    function preloadImage(src) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+            img.src = src;
+        });
+    }
+
+    // Initialize posts with lazy loading
     function initializePosts() {
         const $content = $('#content');
         $content.empty();
-
-        posts.forEach(post => {
-            const postHtml = createPostHtml(post);
-            $content.append(postHtml);
-        });
-
-        // Initialize Semantic UI components
-        $('.ui.dropdown').dropdown();
-        $('.ui.accordion').accordion();
+        loadNextBatch();
     }
 
-    // Create HTML for a post
+    // Load next batch of posts
+    async function loadNextBatch() {
+        if (isLoading || allPostsLoaded) return;
+        
+        isLoading = true;
+        const startIndex = currentBatch * POSTS_PER_BATCH;
+        const endIndex = startIndex + POSTS_PER_BATCH;
+        const batchPosts = posts.slice(startIndex, endIndex);
+
+        // Add skeleton posts
+        const $content = $('#content');
+        const skeletonPosts = Array(POSTS_PER_BATCH).fill().map(() => createSkeletonPostHtml());
+        $content.append(skeletonPosts.join(''));
+
+        try {
+            // Preload all images in the batch
+            const imagePromises = batchPosts.map(post => 
+                preloadImage(post.image || 'images/icons/picture.svg')
+            );
+            await Promise.all(imagePromises);
+
+            // Remove skeleton posts
+            $content.find('.skeleton-card').remove();
+
+            // Add actual posts
+            batchPosts.forEach(post => {
+                const postHtml = createPostHtml(post);
+                const $post = $(postHtml);
+                $post.addClass('content-loading');
+                $content.append($post);
+                
+                // Fade in the post
+                setTimeout(() => {
+                    $post.removeClass('content-loading').addClass('content-loaded');
+                }, 50);
+            });
+
+            // Initialize Semantic UI components for new posts
+            $('.ui.dropdown').dropdown();
+            $('.ui.accordion').accordion();
+
+            currentBatch++;
+            
+            // Check if we've loaded all posts
+            if (endIndex >= posts.length) {
+                allPostsLoaded = true;
+            }
+
+            // Initialize fade-in effect for new content
+            addFadeInEffect();
+        } catch (error) {
+            console.error('Error loading posts:', error);
+        } finally {
+            isLoading = false;
+        }
+    }
+
+    // Create HTML for a post with lazy loading
     function createPostHtml(post) {
         return `
             <div class="ui fluid card" postcondition="" postid="${post._id}" type="actor" actor_un="${post.author.username}" actor_name="${post.author.name}" actor_pic="${post.author.profilePic}">
@@ -44,7 +134,10 @@ $(document).ready(function() {
                         </div>
                     </div>
                     <div class="img post image">
-                        <img src="${post.image || 'images/icons/picture.svg'}" style="max-width: 100%; width: 100%; display: inline-block !important;" class="transition visible" onerror="this.onerror=null;this.src='images/icons/picture.svg'">
+                        <img src="${post.image || 'images/icons/picture.svg'}" 
+                             style="max-width: 100%; width: 100%; display: inline-block !important;" 
+                             class="transition visible" 
+                             onerror="this.onerror=null;this.src='images/icons/picture.svg'">
                     </div>
                     <div class="description">${post.caption}</div>
                     <div class="myTimer hidden">0</div>
@@ -299,6 +392,51 @@ $(document).ready(function() {
         target.text('Flag').removeClass('unflag comment').addClass('flag comment');
     });
 
+    // Initialize lazy loading for images
+    function initializeLazyLoading() {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // Handle scroll to load more posts
+    let scrollTimeout;
+    $(window).scroll(function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+
+        scrollTimeout = setTimeout(() => {
+            const scrollTop = $(window).scrollTop();
+            const windowHeight = $(window).height();
+            const documentHeight = $(document).height();
+            const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+
+            // Load more posts when user is near bottom
+            if (scrollPercentage > 0.8 && !isLoading && !allPostsLoaded) {
+                loadNextBatch();
+            }
+
+            // Initialize lazy loading for new images
+            initializeLazyLoading();
+
+            // Apply glitch effects if needed
+            if (scrollPercentage > 0.6) {
+                applyGlitchEffects();
+            }
+        }, 100);
+    });
+
     // Initialize the page
     initializePosts();
 
@@ -340,4 +478,91 @@ $(document).ready(function() {
 
     // Initial check
     checkScrollForWhatWasThis();
+
+    // Add fade-in class to new content
+    function addFadeInEffect() {
+        $('.ui.card').each(function() {
+            if (!$(this).hasClass('fade-in')) {
+                $(this).addClass('fade-in');
+            }
+        });
+    }
+
+    // Track total number of posts
+    const totalPosts = $('.ui.card').length;
+    const deteriorationStart = Math.floor(totalPosts * 0.67); // Start at 2/3 of the feed
+
+    // Function to apply glitch effects based on post index
+    function applyGlitchEffects() {
+        $('.ui.card').each(function(index) {
+            const $card = $(this);
+            const postIndex = index + 1;
+            
+            if (postIndex >= deteriorationStart) {
+                // Calculate intensity based on position (0 to 1)
+                const intensity = (postIndex - deteriorationStart) / (totalPosts - deteriorationStart);
+                
+                // Apply effects with lower probability
+                if (Math.random() < intensity * 0.3) { // Reduced from 0.5
+                    $card.find('.img.post.image').addClass('glitch-image');
+                }
+                if (Math.random() < intensity * 0.35) { // Reduced from 0.6
+                    $card.find('.author').addClass('glitch-username');
+                }
+                if (Math.random() < intensity * 0.25) { // Reduced from 0.5
+                    $card.find('.description').addClass('glitch-caption');
+                }
+                if (Math.random() < intensity * 0.2) { // Reduced from 0.4
+                    $card.find('.comment').addClass('glitch-comment');
+                }
+                if (Math.random() < intensity * 0.15) { // Reduced from 0.3
+                    $card.addClass('glitch-margin');
+                }
+                
+                // Apply blur to images with lower probability
+                if (Math.random() < intensity * 0.2) { // Reduced from 0.4
+                    $card.find('.img.post.image img').addClass('image-blur');
+                }
+                
+                // Add misalignment to fewer elements
+                if (Math.random() < intensity * 0.15) { // Reduced from 0.35
+                    $card.find('.content').addClass('misaligned');
+                }
+
+                // Add color shift effect with lower probability
+                if (Math.random() < intensity * 0.15) { // Reduced from 0.25
+                    $card.find('.img.post.image').addClass('color-shift');
+                }
+            }
+        });
+    }
+
+    // Handle scroll effects with less frequent updates
+    let lastScrollTop = 0;
+    let scrollThreshold = 0.8;
+    let lastEffectTime = 0;
+    const effectInterval = 4000; // Apply effects every 4 seconds (increased from 2)
+
+    $(window).scroll(function() {
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const documentHeight = $(document).height();
+        const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+        const currentTime = Date.now();
+
+        // Apply glitch effects less frequently
+        if (scrollPercentage > 0.6 && currentTime - lastEffectTime > effectInterval) { // Start later at 60%
+            applyGlitchEffects();
+            lastEffectTime = currentTime;
+        }
+
+        // Update last scroll position
+        lastScrollTop = scrollTop;
+    });
+
+    // Initialize effects
+    applyGlitchEffects();
+
+    // Initialize fade-in effect for existing content
+    addFadeInEffect();
 });
