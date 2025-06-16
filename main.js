@@ -62,10 +62,21 @@ $(document).ready(function() {
         $content.append(skeletonPosts.join(''));
 
         try {
-            // Preload all images in the batch
-            const imagePromises = batchPosts.map(post => 
-                preloadImage(post.image || 'images/icons/picture.svg')
-            );
+            // Preload all images and profile pictures in the batch
+            const imagePromises = batchPosts.map(post => {
+                const promises = [
+                    preloadImage(post.image || 'images/icons/picture.svg'),
+                    preloadImage(post.author.profilePic || 'images/no-avatar.png')
+                ];
+                
+                // Add profile picture preloading for comments
+                post.comments.forEach(comment => {
+                    promises.push(preloadImage(comment.author.profilePic || 'images/no-avatar.png'));
+                });
+                
+                return Promise.all(promises);
+            });
+            
             await Promise.all(imagePromises);
 
             // Remove skeleton posts
